@@ -4,6 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Paulien &amp; Harm-Jan — 26 augustus 2026</title>
+<template id="__bundler_thumbnail" data-bg-color="#0a0a0a">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0a0a0a"/>
+    <g transform="translate(220 200)">
+      <rect width="760" height="440" rx="6" fill="#F5F2ED" stroke="#1A1A1A" stroke-width="1.5"/>
+      <path d="M0 0 L380 240 L760 0" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.55"/>
+    </g>
+    <g transform="translate(600 420)">
+      <circle r="118" fill="#C49A3A"/>
+      <circle r="118" fill="none" stroke="#8C5A33" stroke-width="6" opacity="0.55"/>
+      <text x="0" y="22" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="600" fill="#8C5A33">P&amp;H</text>
+    </g>
+  </svg>
+</template>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Paulien &amp; Harm-Jan" />
 <meta property="og:description" content="26 augustus 2026" />
@@ -1154,7 +1168,19 @@ button { font: inherit; cursor: pointer; }
   color: rgba(239,234,225,0.7);
   overflow: hidden;
   border: 1px solid rgba(239,234,225,0.2);
+  flex-shrink: 0;
 }
+.host-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: scale(1.45) translateY(5%);
+  transform-origin: center top;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.host-card:hover .host-portrait img { transform: scale(1.52) translateY(5%); }
 .host-card h4 {
   font-family: var(--display);
   font-style: italic;
@@ -1410,6 +1436,288 @@ body.is-intro-locked { overflow: hidden; }
   .envelop-intro__hint { bottom: 42px; font-size: 10px; padding: 12px 22px; letter-spacing: 0.28em; }
   .envelop-intro__skip { top: 18px; right: 18px; font-size: 9px; }
 }
+
+/* ============================================================
+   MOBILE REFINEMENT  (iPhone 12/13/14/15 — 375–430px)
+   Goal: feel like an invitation, not a zoomed-in detail.
+   ============================================================ */
+@media (max-width: 640px) {
+
+  /* --- ENVELOPE INTRO: card-style, never touches edges --- */
+  .envelop-intro {
+    background: #14110d;            /* deep warm — frames the card */
+    height: 100svh;
+    height: 100dvh;
+    padding:
+      max(28px, env(safe-area-inset-top))
+      20px
+      max(28px, env(safe-area-inset-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* subtle warm vignette behind the card */
+  .envelop-intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 38%, rgba(60,42,22,0.55), transparent 62%),
+      radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.55), transparent 60%);
+    pointer-events: none;
+  }
+
+  .envelop-intro__poster,
+  .envelop-intro__video {
+    position: relative;
+    inset: auto;
+    top: auto; left: auto;
+    width: min(88vw, 440px);
+    height: auto;
+    aspect-ratio: 16 / 10;            /* slight portrait squeeze; keeps seal smaller */
+    object-fit: cover;
+    object-position: center 52%;
+    border-radius: 8px;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.06) inset,
+      0 30px 60px -18px rgba(0,0,0,0.65),
+      0 8px 22px -8px rgba(0,0,0,0.45);
+  }
+  .envelop-intro__video {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .envelop-intro__hint {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 38px);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    padding: 13px 24px;
+    background: rgba(245,242,237,0.10);
+    border-color: rgba(245,242,237,0.28);
+    color: rgba(245,242,237,0.94);
+  }
+
+  .envelop-intro__skip {
+    top: calc(env(safe-area-inset-top, 0px) + 14px);
+    right: 16px;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    padding: 7px 12px;
+    background: transparent;
+    border-color: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.62);
+  }
+
+  /* --- HERO: names + photo side-by-side (like desktop), then meta/CTA full width --- */
+  .hero {
+    padding: 36px 24px 68px;
+  }
+  /* names occupy the left column; the photo sits beside them on the right.
+     meta + CTA span the full width on rows below. */
+  .hero-grid {
+    grid-template-columns: 1fr 0.74fr;
+    grid-template-areas:
+      "eyebrow photo"
+      "title   photo"
+      "meta    meta"
+      "cta     cta";
+    column-gap: 18px;
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .hero-left { display: contents; }
+
+  .hero-eyebrow {
+    grid-area: eyebrow;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-eyebrow .line { width: 24px; }
+  .hero-eyebrow .eyebrow { font-size: 9.5px; letter-spacing: 0.26em; }
+
+  .hero-title {
+    grid-area: title;
+    font-size: clamp(30px, 9.6vw, 50px);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .hero-title .name { white-space: nowrap; }
+  .hero-title .amp {
+    font-size: 0.62em;
+    margin: -0.02em 0 -0.02em 0.06em;
+  }
+
+  .hero-right {
+    grid-area: photo;
+    align-self: stretch;
+  }
+  .hero-photos {
+    grid-template-columns: 1fr;
+    gap: 0;
+    height: 100%;
+  }
+  .hero-photos .photo-pill {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 230px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 200px 200px 8px 8px;
+  }
+  .hero-photos .photo-pill:nth-child(n+2) { display: none; }
+  .hero-photos .photo-pill .num { display: none; }
+
+  .hero-meta {
+    grid-area: meta;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+  }
+  .hero-meta .label {
+    font-size: 10px;
+    letter-spacing: 0.26em;
+  }
+
+  .hero-cta {
+    grid-area: cta;
+    margin-top: 22px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cta .btn {
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 10.5px;
+    letter-spacing: 0.26em;
+  }
+
+  /* tighten nav slightly for small phones */
+  .nav-inner { padding: 12px 18px; }
+  .nav-mark { font-size: 20px; }
+}
+
+/* ---- Sections below the fold: calm rhythm, safe gutters ---- */
+@media (max-width: 640px) {
+
+  /* consistent horizontal gutter + vertical rhythm */
+  .verse,
+  .programme,
+  .info,
+  .rsvp,
+  .gifts,
+  .hosts,
+  .foot { padding-left: 24px; padding-right: 24px; }
+
+  .verse      { padding-top: 76px;  padding-bottom: 76px; }
+  .programme  { padding-top: 72px;  padding-bottom: 72px; }
+  .info       { padding-top: 72px;  padding-bottom: 76px; }
+  .rsvp       { padding-top: 76px;  padding-bottom: 76px; }
+  .gifts      { padding-top: 72px;  padding-bottom: 76px; }
+  .hosts      { padding-top: 76px;  padding-bottom: 76px; }
+  .foot       { padding-top: 80px;  padding-bottom: 48px; }
+
+  /* VERSE — keep it intimate */
+  .verse blockquote { font-size: clamp(30px, 8.4vw, 42px); line-height: 1.22; }
+  .verse .deco { margin-bottom: 32px; }
+
+  /* MARQUEE — smaller, calmer */
+  .marquee { padding: 14px 0; }
+  .marquee-track { gap: 40px; }
+  .marquee-track span { font-size: 18px; }
+
+  /* PROGRAMME */
+  .section-head { margin-bottom: 40px; }
+  .section-head h2 { font-size: clamp(34px, 9vw, 48px); }
+  .timeline-row { gap: 4px; padding: 22px 0; }
+  .timeline-row:hover { padding-left: 0; }
+  .timeline-time { font-size: 34px; }
+  .timeline-title { font-size: 23px; }
+  .timeline-sub { margin-top: 6px; }
+
+  /* INFO */
+  .info-inner { gap: 48px; }
+  .locatie-photo {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 48px;
+    aspect-ratio: 0.86 / 1;
+  }
+  .info-card h3,
+  .info-aside h3 { font-size: 30px; }
+  .info-card p { max-width: none; }
+  .swatches { gap: 12px; }
+  .swatch .dot { width: 38px; height: 38px; }
+  .info-list .v { font-size: 16px; }
+  .info-list li { padding: 14px 0; }
+  .dresscode-block { margin-top: 26px; }
+
+  /* RSVP */
+  .rsvp h2 { font-size: clamp(38px, 11vw, 60px); margin: 18px 0 26px; }
+  .rsvp-form { padding: 22px 20px; }
+  .deadline-badge { margin-top: 30px; padding: 16px 22px; }
+  .deadline-badge .v { font-size: 26px; }
+  .toggle-group { width: 100%; }
+  .toggle-group button { flex: 1; padding: 12px 8px; }
+  .rsvp-form .submit-row { flex-direction: column; align-items: stretch; gap: 14px; }
+  .rsvp-form .submit-row .btn { justify-content: center; width: 100%; }
+  .rsvp-form .submit-row .note { text-align: center; }
+  .field input,
+  .field textarea,
+  .select-wrap select { font-size: 16px; } /* prevents iOS zoom-on-focus */
+
+  /* GIFTS — shorter cards, snug stack */
+  .gifts h2 { font-size: clamp(38px, 11vw, 60px); }
+  .gifts .lead { font-size: 14px; }
+  .gifts-grid { gap: 12px; margin-top: 44px; }
+  .gift-card { min-height: 0; padding: 26px 22px; gap: 16px; }
+  .gift-card h4 { font-size: 24px; }
+
+  /* HOSTS — centered, generous portrait */
+  .hosts h2 { font-size: clamp(34px, 9.5vw, 52px); }
+  .hosts-head { margin-bottom: 44px; }
+  .host-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+  .host-portrait { width: 132px; height: 132px; }
+  .host-card .tel { font-size: 20px; }
+
+  /* FOOTER */
+  .foot .mark { font-size: clamp(56px, 17vw, 96px); }
+  .foot .meta { font-size: 10px; letter-spacing: 0.26em; }
+  .foot .credits { margin-top: 56px; }
+
+  /* TWEAKS panel — never wider than the screen */
+  .tweaks {
+    width: calc(100vw - 28px);
+    max-width: 300px;
+    right: 14px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  }
+}
+
+/* even smaller — iPhone SE */
+@media (max-width: 380px) {
+  .envelop-intro__poster,
+  .envelop-intro__video { width: 86vw; }
+  .hero { padding: 32px 20px 60px; }
+  .hero-grid { column-gap: 14px; }
+  .hero-title { font-size: clamp(26px, 9.4vw, 40px); }
+  .verse, .programme, .info, .rsvp, .gifts, .hosts, .foot {
+    padding-left: 20px; padding-right: 20px;
+  }
+}
 </style>
 </head>
 <body data-palette="warm" data-font="serif" data-hero="1" data-kaart="26b">
@@ -1513,7 +1821,7 @@ body.is-intro-locked { overflow: hidden; }
   <div class="hero-grid">
     <div class="hero-left">
       <div class="hero-eyebrow fx">
-        <span class="eyebrow">Wees welkom op onze bruiloft!</span>
+        <span class="eyebrow">Wij gaan trouwen! En vinden het leuk als jij er bij bent!</span>
       </div>
 
       <h1 class="hero-title fx fx-d1">
@@ -1577,7 +1885,7 @@ body.is-intro-locked { overflow: hidden; }
     <div class="section-head">
       <div class="fx">
         <span class="eyebrow">26 AUGUSTUS 2026</span>
-        <h2>Ons programma voor jullie</h2>
+        <h2>Het programma</h2>
       </div>
     </div>
 
@@ -1736,7 +2044,7 @@ body.is-intro-locked { overflow: hidden; }
 
         <div class="field">
           <label for="rsvp-msg">Opmerkingen</label>
-          <textarea id="rsvp-msg" name="message" placeholder="Een lied, een herinnering, een wens …"></textarea>
+          <textarea id="rsvp-msg" name="message" placeholder=""></textarea>
         </div>
 
         <div class="bijdrage-block">
@@ -1792,7 +2100,7 @@ body.is-intro-locked { overflow: hidden; }
     <div class="fx">
       <span class="eyebrow">WENSLIJST </span>
       <h2>Wij gaan samen<br/><em>een huis verbouwen</em></h2>
-      <p class="lead">En daar kun jij deel van uitmaken. Elk steentje telt: letterlijk.</p>
+      <p class="lead">En daar kun jij deel van uitmaken. Elk steentje telt, letterlijk. Omdat wij de dag na de bruiloft meteen op huwelijksreis gaan, nemen we liever geen stapel gipsplaten, tegels of deurklinken mee door Rome.<br/><br/>Wil je iets bijdragen? Dan vinden we het heel leuk als je een bedrag in een envelop doet, met een briefje erbij waarop je schrijft waaraan je graag wilt bijdragen.</p>
     </div>
 
     <div class="gifts-grid">
@@ -1823,7 +2131,7 @@ body.is-intro-locked { overflow: hidden; }
       <div class="gift-card fx fx-d1">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
         <span class="num">05</span>
-        <h4>Vloermateriaal</h4>
+        <h4>Plank voor Plank</h4>
         <p>Eiken, plank voor plank</p>
       </div>
       <div class="gift-card fx fx-d2">
@@ -1872,7 +2180,7 @@ body.is-intro-locked { overflow: hidden; }
 
     <div class="hosts-grid">
       <article class="host-card fx">
-        <div class="host-portrait" aria-hidden="true">M</div>
+        <div class="host-portrait"><img src="assets/marijke.jpg" alt="Marijke Wierema" /></div>
         <div>
           <h4>Marijke Wierema</h4>
           <div class="role">Vriendin van de bruid</div>
@@ -1880,7 +2188,7 @@ body.is-intro-locked { overflow: hidden; }
         </div>
       </article>
       <article class="host-card fx fx-d1">
-        <div class="host-portrait" aria-hidden="true">R</div>
+        <div class="host-portrait"><img src="assets/ruud.jpg" alt="Ruud Kuiper" /></div>
         <div>
           <h4>Ruud Kuiper</h4>
           <div class="role">Vriend van de bruidegom</div>
@@ -1896,7 +2204,6 @@ body.is-intro-locked { overflow: hidden; }
      ============================================================ -->
 <footer class="foot" data-screen-label="09 Footer">
   <div class="deco fx"></div>
-  <div class="mark fx fx-d1"><em>Liefs Hermelien</em></div>
   <div class="meta fx fx-d2">26 Augustus 2026 · Slot Doddendael · Ewijk</div>
   <div class="credits">2026</div>
 </footer>
@@ -2141,7 +2448,6 @@ document.getElementById("calBtn").addEventListener("click", e => {
     "DTEND:20260827T000000Z",
     "SUMMARY:Bruiloft Paulien & Harm-Jan",
     "LOCATION:Slot Doddendael, Binnenweg 2, 6644 KD Ewijk",
-    "DESCRIPTION:Wij trouwen! Save the date.",
     "END:VEVENT",
     "END:VCALENDAR"
   ].join("\r\n");
