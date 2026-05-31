@@ -571,6 +571,25 @@ button { font: inherit; cursor: pointer; }
   line-height: 1.15;
   color: var(--ink);
 }
+.timeline-ico {
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  color: var(--ink);
+  justify-self: end;
+  align-self: center;
+}
+.timeline-ico svg {
+  width: 44px;
+  height: 44px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .timeline-sub {
   display: block;
   font-family: var(--body);
@@ -1636,9 +1655,21 @@ body.is-intro-locked { overflow: hidden; }
   /* PROGRAMME */
   .section-head { margin-bottom: 40px; }
   .section-head h2 { font-size: clamp(34px, 9vw, 48px); }
-  .timeline-row { gap: 4px; padding: 22px 0; }
+  .timeline-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "time ico"
+      "main ico";
+    column-gap: 16px;
+    row-gap: 4px;
+    align-items: center;
+    padding: 22px 0;
+  }
   .timeline-row:hover { padding-left: 0; }
-  .timeline-time { font-size: 34px; }
+  .timeline-time { grid-area: time; font-size: 34px; }
+  .timeline-main { grid-area: main; }
+  .timeline-ico { grid-area: ico; width: 46px; height: 46px; }
+  .timeline-ico svg { width: 40px; height: 40px; }
   .timeline-title { font-size: 23px; }
   .timeline-sub { margin-top: 6px; }
 
@@ -1821,7 +1852,7 @@ body.is-intro-locked { overflow: hidden; }
   <div class="hero-grid">
     <div class="hero-left">
       <div class="hero-eyebrow fx">
-        <span class="eyebrow">Wij gaan trouwen! En vinden het leuk als jij er bij bent!</span>
+        <span class="eyebrow">Welkom op onze bruiloft!</span>
       </div>
 
       <h1 class="hero-title fx fx-d1">
@@ -1834,8 +1865,6 @@ body.is-intro-locked { overflow: hidden; }
         <span class="label">26 Augustus 2026</span>
         <span class="dot"></span>
         <span class="label">Slot Doddendael</span>
-        <span class="dot"></span>
-        <span class="label">Ewijk</span>
       </div>
 
       <div class="hero-cta fx fx-d3">
@@ -1892,38 +1921,40 @@ body.is-intro-locked { overflow: hidden; }
     <div class="timeline">
       <!-- Kerkdienst — 26a + 26b -->
       <div class="timeline-row fx" data-show="26a 26b">
-        <div class="timeline-time">13<span style="opacity:.45">:15</span></div>
-        <div>
+        <div class="timeline-time">13<span>:15</span></div>
+        <div class="timeline-main">
           <div class="timeline-title">Kerkdienst</div>
-          <span class="timeline-sub">Slot Doddendael · Kastanjeboom</span>
         </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4M10 4h4"/><path d="M12 6 5 11v10h14V11z"/><path d="M9 21v-5a3 3 0 0 1 6 0v5"/></svg></span>
       </div>
 
       <!-- Toast & taart — 26a + 26b -->
       <div class="timeline-row fx" data-show="26a 26b">
-        <div class="timeline-time">14<span style="opacity:.45">:30</span></div>
-        <div>
+        <div class="timeline-time">14<span>:30</span></div>
+        <div class="timeline-main">
           <div class="timeline-title">Toast &amp; taart</div>
-          <span class="timeline-sub">Slot Doddendael · binnenplaats · tot 15:30</span>
+          <span class="timeline-sub">Tot 15:30</span>
         </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 21h6M12 21v-6"/><path d="M8 4h8l-1.2 7a2.8 2.8 0 0 1-5.6 0z"/><circle cx="16" cy="5.4" r=".55"/><circle cx="17.4" cy="8.4" r=".55"/></svg></span>
       </div>
 
       <!-- Diner — alleen 26b -->
       <div class="timeline-row fx" data-show="26b">
-        <div class="timeline-time">17<span style="opacity:.45">:30</span></div>
-        <div>
+        <div class="timeline-time">17<span>:30</span></div>
+        <div class="timeline-main">
           <div class="timeline-title">Diner</div>
-          <span class="timeline-sub">Slot Doddendael · grote zaal</span>
         </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3v3M10 3v2.6M12 3v3"/><path d="M8 6a2 2 0 0 0 4 0"/><path d="M10 6v15"/><path d="M16 3c-2 1-2 6 0 7v11"/></svg></span>
       </div>
 
       <!-- Borrel + Feest — 26b + 26c -->
       <div class="timeline-row fx" data-show="26b 26c">
-        <div class="timeline-time">20<span style="opacity:.45">:00</span></div>
-        <div>
+        <div class="timeline-time">20<span>:00</span></div>
+        <div class="timeline-main">
           <div class="timeline-title">Borrel &amp; feest</div>
-          <span class="timeline-sub">Slot Doddendael · tot 23:00</span>
+          <span class="timeline-sub">Tot 23:00</span>
         </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10.5 3l1.5 4.5L16.5 9l-4.5 1.5L10.5 15 9 10.5 4.5 9 9 7.5z"/><path d="M18 13.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></span>
       </div>
     </div>
   </div>
@@ -1940,8 +1971,8 @@ body.is-intro-locked { overflow: hidden; }
     <div class="info-card fx">
       <span class="eyebrow">De locatie</span>
       <h3>Slot Doddendael</h3>
-      <p>Vanaf het moment dat wij een relatie kregen, wist Paulien één ding zeker: als we ooit gaan trouwen, dan op Slot Doddendael.</p>
-      <p style="margin-top:14px"><strong style="font-weight:500">Binnenweg 2 · 6644 KD Ewijk</strong></p>
+      <p style="color: rgb(107, 98, 88)">Vanaf het begin van onze relatie wist Paulien het al zeker: ooit trouwen wij op Slot Doddendael.</p>
+      <p style="margin-top:14px"><strong style="font-weight: 500; color: rgb(107, 98, 88)">Binnenweg 2 · 6644 KD · Ewijk</strong></p>
       <a class="map-link" href="https://maps.google.com/?q=Slot+Doddendael+Binnenweg+2+Ewijk" target="_blank" rel="noopener">Open in Google Maps <span>→</span></a>
 
       <ul class="info-list">
@@ -1953,23 +1984,17 @@ body.is-intro-locked { overflow: hidden; }
           <span class="k">Mindervaliden</span>
           <span class="v">afzetten bij binnenplaats</span>
         </li>
-        <li>
-          <span class="k">Overnachten</span>
-          <span class="v">op aanvraag</span>
-        </li>
       </ul>
     </div>
 
     <div class="info-aside fx fx-d1">
       <span class="eyebrow">Dress code</span>
-      <h3>Italian Chique</h3>
-      <p>Italië heeft voor ons iets bijzonders. We denken terug aan onze vakantie in Cinque Terre: kleurrijke straatjes, lange avonden buiten, goed eten en dat ontspannen Italiaanse gevoel.</p>
+      <h3 style="font-family: &quot;Cormorant Garamond&quot;, serif; font-style: italic; font-size: 36px">Italian Chique</h3>
+      <p style="color: rgb(107, 98, 88)">Laat je inspireren door het gevoel van een Italiaanse zomeravond: warm, stijlvol en feestelijk. Een avond om mooi uit te pakken, in kleuren die passen bij la dolce vita.</p>
 
       <div class="dresscode-block">
-        <div class="dresscode-label">Voor hem: La Dolce Vita</div>
+        <div class="dresscode-label">Voor hem:</div>
         <div class="swatches">
-          <div class="swatch" style="--c:rgb(157,178,197)"><span class="dot" style="background-color: rgb(110, 141, 156)"></span><span class="name">
-</span></div>
           <div class="swatch" style="--c:rgb(79,90,58)"><span class="dot"></span><span class="name" style="color:rgb(79,90,58)">
 </span></div>
           <div class="swatch" style="--c:var(--c-sand)"><span class="dot" style="background-color: rgb(214, 203, 185)"></span><span class="name">
@@ -1980,7 +2005,7 @@ body.is-intro-locked { overflow: hidden; }
       </div>
 
       <div class="dresscode-block">
-        <div class="dresscode-label">Voor haar: Fiore di Campo</div>
+        <div class="dresscode-label">Voor haar:</div>
         <div class="swatches">
           <div class="swatch" style="--c:var(--c-lightblue)"><span class="dot"></span><span class="name">
 </span></div>
@@ -2048,7 +2073,6 @@ body.is-intro-locked { overflow: hidden; }
         </div>
 
         <div class="bijdrage-block">
-          <span class="bijdrage-label">Bijdrage aan het programma</span>
           <label class="toggle-check" for="bijdrage-toggle">
             <input type="checkbox" id="bijdrage-toggle" name="bijdrage" />
             <span class="box"><span class="tick">✓</span></span>
@@ -2100,69 +2124,57 @@ body.is-intro-locked { overflow: hidden; }
     <div class="fx">
       <span class="eyebrow">WENSLIJST </span>
       <h2>Wij gaan samen<br/><em>een huis verbouwen</em></h2>
-      <p class="lead">En daar kun jij deel van uitmaken. Elk steentje telt, letterlijk. Omdat wij de dag na de bruiloft meteen op huwelijksreis gaan, nemen we liever geen stapel gipsplaten, tegels of deurklinken mee door Rome.<br/><br/>Wil je iets bijdragen? Dan vinden we het heel leuk als je een bedrag in een envelop doet, met een briefje erbij waarop je schrijft waaraan je graag wilt bijdragen.</p>
+      <p class="lead">Ons mooiste cadeau is dat jullie deze dag met ons vieren. Willen jullie ons daarnaast iets meegeven? Dan zijn we heel blij met een bijdrage in een envelop.<br/><br/>Omdat we midden in de verbouwing zitten, sparen we voor verschillende dingen in en om het huis. Hieronder zien jullie waar we momenteel voor sparen. Een bijdrage aan een specifiek spaarpotje vinden we extra leuk. Schrijf het dan gerust op een briefje voor in de envelop.</p>
     </div>
 
     <div class="gifts-grid">
       <div class="gift-card fx">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><path d="M3 12h18M12 6v12"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 7l-7 7v6h6l7-7"/></svg></div>
         <span class="num">01</span>
-        <h4>Gipsplaten</h4>
-        <p>Wand voor wand</p>
-      </div>
-      <div class="gift-card fx fx-d1">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18l8-12 10 12"/><path d="M7 18l4-6"/></svg></div>
-        <span class="num">02</span>
-        <h4>Hout &amp; balken</h4>
-        <p>Voor het dak boven ons hoofd</p>
-      </div>
-      <div class="gift-card fx fx-d2">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 4h12l-2 16H8z"/><path d="M6 8h12"/></svg></div>
-        <span class="num">03</span>
-        <h4>Stucwerk</h4>
-        <p>Glad op het oog</p>
-      </div>
-      <div class="gift-card fx">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 20l4-14h6l4 14"/><path d="M7 14h10"/></svg></div>
-        <span class="num">04</span>
-        <h4>Verf &amp; primer</h4>
-        <p>Een kleurkeuze per kamer</p>
-      </div>
-      <div class="gift-card fx fx-d1">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
-        <span class="num">05</span>
-        <h4>Plank voor Plank</h4>
-        <p>Eiken, plank voor plank</p>
-      </div>
-      <div class="gift-card fx fx-d2">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3v6a3 3 0 006 0V3"/><rect x="8" y="10" width="8" height="11" rx="2"/></svg></div>
-        <span class="num">06</span>
-        <h4>Sanitair</h4>
-        <p>Kraan, douche, badkuip</p>
-      </div>
-      <div class="gift-card fx">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a5 5 0 00-3 9v3h6v-3a5 5 0 00-3-9z"/><path d="M10 18h4M11 21h2"/></svg></div>
-        <span class="num">07</span>
-        <h4>Verlichting</h4>
-        <p>Warm licht in elke hoek</p>
+        <h4>Verbouwing</h4>
+        <p>Steen voor steen</p>
       </div>
       <div class="gift-card fx fx-d1">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 13v5h18v-5"/><path d="M5 13v-3a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 13a2 2 0 012-2h14a2 2 0 012 2"/><path d="M6 18v2M18 18v2"/></svg></div>
-        <span class="num">08</span>
+        <span class="num">02</span>
         <h4>Meubels</h4>
         <p>Bank, tafel, kast</p>
       </div>
       <div class="gift-card fx fx-d2">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 7l-7 7v6h6l7-7"/></svg></div>
-        <span class="num">09</span>
-        <h4>Gereedschap</h4>
-        <p>Beter goed dan goedkoop</p>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><circle cx="12" cy="13" r="4"/><path d="M7 6h2"/></svg></div>
+        <span class="num">03</span>
+        <h4>Wasmachine &amp; Droger</h4>
+        <p>Fris en droog</p>
       </div>
-      <div class="gift-card is-bank fx">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6v10H3z"/><path d="M7 20v-7M12 20v-7M17 20v-7"/></svg></div>
-        <span class="num">10</span>
-        <h4>Bijdrage</h4>
-        <p>Rekeningnummer t.b.d. — per overboeking</p>
+      <div class="gift-card fx">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <span class="num">04</span>
+        <h4>Servies</h4>
+        <p>Voor het eerste diner</p>
+      </div>
+      <div class="gift-card fx fx-d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c-4 0-6-3-6-6 3 0 6 2 6 6z"/><path d="M12 11c0-3 2-5 5-5 0 3-2 5-5 5z"/></svg></div>
+        <span class="num">05</span>
+        <h4>Tuin</h4>
+        <p>Groen om ons heen</p>
+      </div>
+      <div class="gift-card fx fx-d2">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 8h11v5a4 4 0 01-4 4H9a4 4 0 01-4-4z"/><path d="M16 9h2a2 2 0 010 4h-2"/><path d="M8 4v2M11 4v2"/></svg></div>
+        <span class="num">06</span>
+        <h4>Koffiezetapparaat</h4>
+        <p>De eerste kop samen</p>
+      </div>
+      <div class="gift-card fx">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M8 13h8"/><circle cx="12" cy="13" r="1.5"/></svg></div>
+        <span class="num">07</span>
+        <h4>Robotstofzuiger</h4>
+        <p>Schoon zonder moeite</p>
+      </div>
+      <div class="gift-card fx fx-d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 9h14v8a2 2 0 01-2 2H7a2 2 0 01-2-2z"/><path d="M9 9V6a3 3 0 016 0v3"/><path d="M9 13h6"/></svg></div>
+        <span class="num">08</span>
+        <h4>Keuken</h4>
+        <p>Waar het samenkomt</p>
       </div>
     </div>
   </div>
@@ -2444,8 +2456,8 @@ document.getElementById("calBtn").addEventListener("click", e => {
     "BEGIN:VEVENT",
     "UID:phwedding-2026@slotdoddendael",
     "DTSTAMP:20260101T000000Z",
-    "DTSTART:20260826T120000Z",
-    "DTEND:20260827T000000Z",
+    "DTSTART;VALUE=DATE:20260826",
+    "DTEND;VALUE=DATE:20260827",
     "SUMMARY:Bruiloft Paulien & Harm-Jan",
     "LOCATION:Slot Doddendael, Binnenweg 2, 6644 KD Ewijk",
     "END:VEVENT",
@@ -2464,3 +2476,7 @@ document.getElementById("calBtn").addEventListener("click", e => {
 </body>
 <script src="image-slot.js"></script>
 </html>
+
+<style id="__om-edit-overrides">
+:is(h1,h2,h3,h4,h5,h6) >i { font-size: 6px !important }
+</style>
