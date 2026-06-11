@@ -634,7 +634,8 @@ button { font: inherit; cursor: pointer; }
   grid-template-columns: 1fr 1fr;
   gap: 80px;
 }
-.info-card h3 {
+.info-card h3,
+.info-aside h3 {
   font-family: var(--display);
   font-style: italic;
   font-size: 36px;
@@ -719,7 +720,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 .info-aside {
-  padding-top: 12px;
+  padding-top: 0;
 }
 .info-list { list-style: none; padding: 0; margin: 22px 0 0; }
 .info-list li {
@@ -832,6 +833,18 @@ button { font: inherit; cursor: pointer; }
 .rsvp-form .row { display: grid; gap: 22px; }
 .rsvp-form .grid-2 { grid-template-columns: 1fr 1fr; gap: 18px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
+.attend-only {
+  overflow: hidden;
+  transition: opacity .35s ease, max-height .45s ease, margin .35s ease;
+  max-height: 600px;
+  opacity: 1;
+}
+.rsvp-form.not-attending .attend-only {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
 
 .extra-names {
   display: grid;
@@ -1043,6 +1056,22 @@ button { font: inherit; cursor: pointer; }
 .rsvp-form.is-sent .submit-row { display: none; }
 .rsvp-form.is-sent .rsvp-success { display: block; }
 
+.rsvp-dupe {
+  display: none;
+  padding: 24px;
+  margin-top: 24px;
+  border: 1px solid rgba(239,234,225,0.4);
+  border-radius: 4px;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--on-accent);
+  text-align: center;
+}
+.rsvp-form.is-dupe .row,
+.rsvp-form.is-dupe .submit-row { display: none; }
+.rsvp-form.is-dupe .rsvp-dupe { display: block; }
+
 @media (max-width: 980px) {
   .rsvp { padding: 80px 22px; }
   .rsvp-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1195,11 +1224,11 @@ button { font: inherit; cursor: pointer; }
   object-fit: cover;
   object-position: center top;
   display: block;
-  transform: scale(1.45) translateY(5%);
+  transform: scale(1.45) translateY(-4%);
   transform-origin: center top;
   transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
 }
-.host-card:hover .host-portrait img { transform: scale(1.52) translateY(5%); }
+.host-card:hover .host-portrait img { transform: scale(1.52) translateY(-4%); }
 .host-card h4 {
   font-family: var(--display);
   font-style: italic;
@@ -1852,7 +1881,7 @@ body.is-intro-locked { overflow: hidden; }
   <div class="hero-grid">
     <div class="hero-left">
       <div class="hero-eyebrow fx">
-        <span class="eyebrow">Welkom op onze bruiloft!</span>
+        <span class="eyebrow" style="font-size: 11px">Welkom op onze bruiloft!</span>
       </div>
 
       <h1 class="hero-title fx fx-d1">
@@ -1924,6 +1953,7 @@ body.is-intro-locked { overflow: hidden; }
         <div class="timeline-time">13<span>:15</span></div>
         <div class="timeline-main">
           <div class="timeline-title">Kerkdienst</div>
+          <span class="timeline-sub">13:00 aanvang</span>
         </div>
         <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4M10 4h4"/><path d="M12 6 5 11v10h14V11z"/><path d="M9 21v-5a3 3 0 0 1 6 0v5"/></svg></span>
       </div>
@@ -1982,14 +2012,14 @@ body.is-intro-locked { overflow: hidden; }
         </li>
         <li>
           <span class="k">Mindervaliden</span>
-          <span class="v">afzetten bij binnenplaats</span>
+          <span class="v" style="text-align:right;max-width:24ch">Afzetten bij de ingang</span>
         </li>
       </ul>
     </div>
 
     <div class="info-aside fx fx-d1">
       <span class="eyebrow">Dress code</span>
-      <h3 style="font-family: &quot;Cormorant Garamond&quot;, serif; font-style: italic; font-size: 36px">Italian Chique</h3>
+      <h3>Italian Chique</h3>
       <p style="color: rgb(107, 98, 88)">Laat je inspireren door het gevoel van een Italiaanse zomeravond: warm, stijlvol en feestelijk. Een avond om mooi uit te pakken, in kleuren die passen bij la dolce vita.</p>
 
       <div class="dresscode-block">
@@ -2031,10 +2061,11 @@ body.is-intro-locked { overflow: hidden; }
     <div class="rsvp-copy fx">
       <span class="rsvp-eyebrow">RSVP</span>
       <h2>Laat je weten of je<br/><em>erbij bent?</em></h2>
-      <p>Je bent uitgenodigd voor de volledige dag: kerkdienst, borrel, diner en feest. Laat het ons graag voor onderstaande datum weten, dan kunnen we alles in goede banen leiden.</p>
+      <p>We kijken ernaar uit om onze trouwdag samen met jullie te vieren. Wil je ons vóór 3 augustus laten weten of je erbij bent?</p>
       <div class="deadline-badge">
-        <span class="k">Antwoord vóór</span>
-        <span class="v">03.08.26</span>
+        <span class="k">
+</span>
+        <span class="v">Voeg herinnering toe aan agenda</span>
       </div>
     </div>
 
@@ -2043,6 +2074,11 @@ body.is-intro-locked { overflow: hidden; }
         <div class="field">
           <label for="rsvp-name">Naam persoon 1</label>
           <input id="rsvp-name" name="name" type="text" placeholder="Voor- en achternaam" required />
+        </div>
+
+        <div class="field">
+          <label for="rsvp-email">E-mailadres</label>
+          <input id="rsvp-email" name="email" type="email" placeholder="naam@gmail.com" required />
         </div>
 
         <div id="extra-names" class="extra-names"></div>
@@ -2062,17 +2098,17 @@ body.is-intro-locked { overflow: hidden; }
           </div>
         </div>
 
-        <div class="field">
+        <div class="field attend-only">
           <label for="rsvp-diet">Dieetwensen</label>
           <input id="rsvp-diet" name="diet" type="text" placeholder="Vegetarisch, allergieën, …" />
         </div>
 
-        <div class="field">
+        <div class="field attend-only">
           <label for="rsvp-msg">Opmerkingen</label>
           <textarea id="rsvp-msg" name="message" placeholder=""></textarea>
         </div>
 
-        <div class="bijdrage-block">
+        <div class="bijdrage-block attend-only">
           <label class="toggle-check" for="bijdrage-toggle">
             <input type="checkbox" id="bijdrage-toggle" name="bijdrage" />
             <span class="box"><span class="tick">✓</span></span>
@@ -2112,6 +2148,11 @@ body.is-intro-locked { overflow: hidden; }
         Dankjewel voor je aanmelding!
         <br/><span style="font-family:var(--body);font-style:normal;font-size:12px;letter-spacing:.18em;text-transform:none;color:rgba(239,234,225,0.7);line-height:1.7;display:block;margin-top:14px;max-width:46ch">Heb je nog vragen? Neem contact op met Marijke (<a href="tel:+31629991333" style="color:inherit;border-bottom:1px solid rgba(239,234,225,0.4);text-decoration:none">06 2999 1333</a>) of Ruud (<a href="tel:+31620810321" style="color:inherit;border-bottom:1px solid rgba(239,234,225,0.4);text-decoration:none">06 2081 032</a>).</span>
       </div>
+
+      <div class="rsvp-dupe">
+        U heeft zich al een keer aangemeld.
+        <br/><span style="font-family:var(--body);font-style:normal;font-size:12px;letter-spacing:.18em;text-transform:none;color:rgba(239,234,225,0.7);line-height:1.7;display:block;margin-top:14px;max-width:46ch">Voor vragen of een wijziging kun je terecht bij de ceremoniemeesters: Marijke (<a href="tel:+31629991333" style="color:inherit;border-bottom:1px solid rgba(239,234,225,0.4);text-decoration:none">06 2999 1333</a>) of Ruud (<a href="tel:+31620810321" style="color:inherit;border-bottom:1px solid rgba(239,234,225,0.4);text-decoration:none">06 2081 032</a>).</span>
+      </div>
     </form>
   </div>
 </section>
@@ -2124,7 +2165,9 @@ body.is-intro-locked { overflow: hidden; }
     <div class="fx">
       <span class="eyebrow">WENSLIJST </span>
       <h2>Wij gaan samen<br/><em>een huis verbouwen</em></h2>
-      <p class="lead">Ons mooiste cadeau is dat jullie deze dag met ons vieren. Willen jullie ons daarnaast iets meegeven? Dan zijn we heel blij met een bijdrage in een envelop.<br/><br/>Omdat we midden in de verbouwing zitten, sparen we voor verschillende dingen in en om het huis. Hieronder zien jullie waar we momenteel voor sparen. Een bijdrage aan een specifiek spaarpotje vinden we extra leuk. Schrijf het dan gerust op een briefje voor in de envelop.</p>
+      <p class="lead">Ons mooiste cadeau is dat jullie deze dag met ons vieren. Willen jullie ons daarnaast iets geven? Dan zijn we heel blij met een bijdrage in een envelop.
+
+Omdat we midden in de verbouwing zitten, sparen we voor verschillende dingen in en om het huis. Hieronder zien jullie waar we momenteel voor sparen. Een bijdrage aan een specifiek spaarpotje vinden we extra leuk. Schrijf het dan gerust op een briefje voor in de envelop.</p>
     </div>
 
     <div class="gifts-grid">
@@ -2132,49 +2175,56 @@ body.is-intro-locked { overflow: hidden; }
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 7l-7 7v6h6l7-7"/></svg></div>
         <span class="num">01</span>
         <h4>Verbouwing</h4>
-        <p>Steen voor steen</p>
+        <p>
+</p>
       </div>
       <div class="gift-card fx fx-d1">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 13v5h18v-5"/><path d="M5 13v-3a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 13a2 2 0 012-2h14a2 2 0 012 2"/><path d="M6 18v2M18 18v2"/></svg></div>
         <span class="num">02</span>
         <h4>Meubels</h4>
-        <p>Bank, tafel, kast</p>
+        <p>
+</p>
       </div>
       <div class="gift-card fx fx-d2">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><circle cx="12" cy="13" r="4"/><path d="M7 6h2"/></svg></div>
         <span class="num">03</span>
         <h4>Wasmachine &amp; Droger</h4>
-        <p>Fris en droog</p>
+        <p>
+</p>
       </div>
       <div class="gift-card fx">
         <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
         <span class="num">04</span>
-        <h4>Servies</h4>
-        <p>Voor het eerste diner</p>
+        <h4>Keuken</h4>
+        <p>
+</p>
       </div>
       <div class="gift-card fx fx-d1">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c-4 0-6-3-6-6 3 0 6 2 6 6z"/><path d="M12 11c0-3 2-5 5-5 0 3-2 5-5 5z"/></svg></div>
         <span class="num">05</span>
-        <h4>Tuin</h4>
-        <p>Groen om ons heen</p>
+        <h4>Badkamer</h4>
+        <p>
+</p>
       </div>
       <div class="gift-card fx fx-d2">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 8h11v5a4 4 0 01-4 4H9a4 4 0 01-4-4z"/><path d="M16 9h2a2 2 0 010 4h-2"/><path d="M8 4v2M11 4v2"/></svg></div>
         <span class="num">06</span>
         <h4>Koffiezetapparaat</h4>
-        <p>De eerste kop samen</p>
+        <p>, </p>
       </div>
       <div class="gift-card fx">
         <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M8 13h8"/><circle cx="12" cy="13" r="1.5"/></svg></div>
         <span class="num">07</span>
         <h4>Robotstofzuiger</h4>
-        <p>Schoon zonder moeite</p>
+        <p>
+</p>
       </div>
       <div class="gift-card fx fx-d1">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 9h14v8a2 2 0 01-2 2H7a2 2 0 01-2-2z"/><path d="M9 9V6a3 3 0 016 0v3"/><path d="M9 13h6"/></svg></div>
         <span class="num">08</span>
-        <h4>Keuken</h4>
-        <p>Waar het samenkomt</p>
+        <h4>Servies</h4>
+        <p>
+</p>
       </div>
     </div>
   </div>
@@ -2217,7 +2267,7 @@ body.is-intro-locked { overflow: hidden; }
 <footer class="foot" data-screen-label="09 Footer">
   <div class="deco fx"></div>
   <div class="meta fx fx-d2">26 Augustus 2026 · Slot Doddendael · Ewijk</div>
-  <div class="credits">2026</div>
+  <div class="credits"></div>
 </footer>
 
 <!-- ============================================================
@@ -2339,6 +2389,10 @@ document.querySelectorAll('.toggle-group').forEach(tg => {
     const key = tg.getAttribute("data-toggle");
     const hidden = tg.parentElement.querySelector(`input[name="${key}"]`);
     if (hidden) hidden.value = btn.getAttribute("data-value");
+    if (key === "attending") {
+      const form = tg.closest(".rsvp-form");
+      if (form) form.classList.toggle("not-attending", btn.getAttribute("data-value") === "nee");
+    }
   });
 });
 
@@ -2413,6 +2467,21 @@ rsvpForm.addEventListener("submit", async (e) => {
     return;
   }
 
+  const emailInput = rsvpForm.querySelector('input[name="email"]');
+  const email = (emailInput.value || "").trim().toLowerCase();
+  if (!email || !emailInput.checkValidity()) {
+    emailInput.focus();
+    return;
+  }
+
+  // prevent a second submission from the same e-mail
+  let submitted = [];
+  try { submitted = JSON.parse(localStorage.getItem("rsvp_submitted_emails") || "[]"); } catch (e) {}
+  if (submitted.includes(email)) {
+    rsvpForm.classList.add("is-dupe");
+    return;
+  }
+
   // collect all named fields including dynamically added "name-2", "name-3", …
   const fd = new FormData(rsvpForm);
   const payload = {};
@@ -2436,6 +2505,10 @@ rsvpForm.addEventListener("submit", async (e) => {
       body: JSON.stringify(payload),
     });
     rsvpForm.classList.add("is-sent");
+    try {
+      submitted.push(email);
+      localStorage.setItem("rsvp_submitted_emails", JSON.stringify(submitted));
+    } catch (e) {}
     rsvpForm.scrollIntoView({ behavior: "smooth", block: "center" });
   } catch (err) {
     rsvpSubmitBtn.disabled = false;
