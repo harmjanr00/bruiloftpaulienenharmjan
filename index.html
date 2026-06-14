@@ -800,29 +800,57 @@ button { font: inherit; cursor: pointer; }
 .rsvp-eyebrow .l { width: 28px; height: 1px; background: rgba(239,234,225,0.5); }
 .deadline-badge {
   display: inline-flex;
-  align-items: baseline;
-  gap: 14px;
-  margin-top: 40px;
-  padding: 20px 28px;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  padding: 9px 16px;
   border: 1px solid rgba(239,234,225,0.25);
   border-radius: 999px;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color .3s ease, background .3s ease;
 }
-.deadline-badge .k {
-  font-family: var(--body);
-  font-size: 10px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(239,234,225,0.65);
+.deadline-badge:hover { border-color: rgba(239,234,225,0.55); background: rgba(239,234,225,0.05); }
+.deadline-badge svg {
+  width: 14px; height: 14px;
+  fill: none; stroke: var(--on-accent);
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  opacity: .8;
 }
 .deadline-badge .v {
-  font-family: var(--display);
-  font-size: 32px;
-  font-style: italic;
-  color: var(--on-accent);
-  letter-spacing: 0.02em;
+  font-family: var(--body);
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.8);
 }
 
 /* form */
+.section-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 56px auto 0;
+  border: 1px solid rgba(239,234,225,0.25);
+  border-radius: 999px;
+  color: rgba(239,234,225,0.7);
+  transition: border-color .3s ease, color .3s ease, background .3s ease;
+}
+.section-scroll:hover { border-color: rgba(239,234,225,0.6); color: var(--on-accent); background: rgba(239,234,225,0.05); }
+.section-scroll svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  animation: scroll-hint-bob 2.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-scroll svg { animation: none; }
+}
+
 .rsvp-form {
   background: rgba(239,234,225,0.04);
   border: 1px solid rgba(239,234,225,0.15);
@@ -1040,6 +1068,42 @@ button { font: inherit; cursor: pointer; }
   color: rgba(239,234,225,0.5);
 }
 
+.scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: rgba(239,234,225,0.6);
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: color .35s ease;
+}
+.scroll-hint:hover { color: var(--on-accent); }
+.scroll-hint svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: scroll-hint-bob 2.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint svg { animation: none; }
+}
+@keyframes scroll-hint-bob {
+  0%, 100% { transform: translateY(-2px); opacity: .65; }
+  50% { transform: translateY(4px); opacity: 1; }
+}
+/* only meaningful when the form sits below the copy */
+@media (min-width: 981px) {
+  .scroll-hint { display: none; }
+}
+
 .rsvp-success {
   display: none;
   padding: 24px;
@@ -1055,6 +1119,23 @@ button { font: inherit; cursor: pointer; }
 .rsvp-form.is-sent .row,
 .rsvp-form.is-sent .submit-row { display: none; }
 .rsvp-form.is-sent .rsvp-success { display: block; }
+
+/* once a message is shown, turn the form into a clean centred panel */
+.rsvp-form.is-sent,
+.rsvp-form.is-dupe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 280px;
+}
+.rsvp-form.is-sent .rsvp-success,
+.rsvp-form.is-dupe .rsvp-dupe {
+  border: none;
+  padding: 0;
+  margin: 0;
+  max-width: 42ch;
+}
 
 .rsvp-dupe {
   display: none;
@@ -1722,8 +1803,7 @@ body.is-intro-locked { overflow: hidden; }
   /* RSVP */
   .rsvp h2 { font-size: clamp(38px, 11vw, 60px); margin: 18px 0 26px; }
   .rsvp-form { padding: 22px 20px; }
-  .deadline-badge { margin-top: 30px; padding: 16px 22px; }
-  .deadline-badge .v { font-size: 26px; }
+  .deadline-badge { margin-top: 24px; padding: 9px 16px; }
   .toggle-group { width: 100%; }
   .toggle-group button { flex: 1; padding: 12px 8px; }
   .rsvp-form .submit-row { flex-direction: column; align-items: stretch; gap: 14px; }
@@ -2062,11 +2142,14 @@ body.is-intro-locked { overflow: hidden; }
       <span class="rsvp-eyebrow">RSVP</span>
       <h2>Laat je weten of je<br/><em>erbij bent?</em></h2>
       <p>We kijken ernaar uit om onze trouwdag samen met jullie te vieren. Wil je ons vóór 3 augustus laten weten of je erbij bent?</p>
-      <div class="deadline-badge">
-        <span class="k">
-</span>
-        <span class="v">Voeg herinnering toe aan agenda</span>
-      </div>
+      <button type="button" class="deadline-badge" id="addReminder">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4M12 13v4M10 15h4"/></svg>
+        <span class="v">Herinnering in agenda</span>
+      </button>
+      <a href="#rsvpForm" class="scroll-hint" aria-label="Scroll naar het formulier">
+        <span>Vul hieronder in</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M5 13l7 7 7-7"/></svg>
+      </a>
     </div>
 
     <form class="rsvp-form fx fx-d1" id="rsvpForm" novalidate>
@@ -2155,6 +2238,9 @@ body.is-intro-locked { overflow: hidden; }
       </div>
     </form>
   </div>
+  <a href="#cadeau" class="section-scroll" aria-label="Verder naar beneden">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </a>
 </section>
 
 <!-- ============================================================
@@ -2165,9 +2251,7 @@ body.is-intro-locked { overflow: hidden; }
     <div class="fx">
       <span class="eyebrow">WENSLIJST </span>
       <h2>Wij gaan samen<br/><em>een huis verbouwen</em></h2>
-      <p class="lead">Ons mooiste cadeau is dat jullie deze dag met ons vieren. Willen jullie ons daarnaast iets geven? Dan zijn we heel blij met een bijdrage in een envelop.
-
-Omdat we midden in de verbouwing zitten, sparen we voor verschillende dingen in en om het huis. Hieronder zien jullie waar we momenteel voor sparen. Een bijdrage aan een specifiek spaarpotje vinden we extra leuk. Schrijf het dan gerust op een briefje voor in de envelop.</p>
+      <p class="lead">Ons mooiste cadeau is dat jullie deze dag met ons vieren. Willen jullie ons daarnaast toch iets geven? Dan zijn we heel blij met een bijdrage in een envelop.<br/><br/>Omdat we midden in de verbouwing zitten, sparen we voor verschillende dingen in en om het huis. Hieronder zien jullie waar we momenteel voor sparen. Een bijdrage aan een specifiek spaarpotje vinden we extra leuk. Schrijf het dan gerust op een briefje voor in de envelop.<br/><br/>Liever een bedrag overmaken? Neem dan even contact op met de ceremoniemeesters. Zij kunnen jullie de IBAN doorgeven.</p>
     </div>
 
     <div class="gifts-grid">
@@ -2397,6 +2481,43 @@ document.querySelectorAll('.toggle-group').forEach(tg => {
 });
 
 const rsvpForm = document.getElementById("rsvpForm");
+
+/* add a calendar reminder (.ics) for the RSVP deadline — 3 aug 2026 */
+const addReminderBtn = document.getElementById("addReminder");
+if (addReminderBtn) {
+  addReminderBtn.addEventListener("click", () => {
+    const ics = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Bruiloft//RSVP//NL",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
+      "BEGIN:VEVENT",
+      "UID:rsvp-deadline-20260803@bruiloft",
+      "DTSTAMP:20260614T000000Z",
+      "DTSTART;VALUE=DATE:20260803",
+      "DTEND;VALUE=DATE:20260804",
+      "SUMMARY:Laatste dag RSVP bruiloft",
+      "DESCRIPTION:Vandaag is de uiterste dag om je aan te melden voor de bruiloft.",
+      "BEGIN:VALARM",
+      "TRIGGER:-P1D",
+      "ACTION:DISPLAY",
+      "DESCRIPTION:RSVP bruiloft sluit morgen",
+      "END:VALARM",
+      "END:VEVENT",
+      "END:VCALENDAR"
+    ].join("\r\n");
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "RSVP-herinnering.ics";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+}
 
 /* dynamically render extra name fields based on count */
 const countInput = document.getElementById("rsvp-count");
