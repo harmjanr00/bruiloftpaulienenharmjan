@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paulien &amp; Harm-Jan — 26 augustus 2026</title>
+<template id="__bundler_thumbnail" data-bg-color="#0a0a0a">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0a0a0a"/>
+    <g transform="translate(220 200)">
+      <rect width="760" height="440" rx="6" fill="#F5F2ED" stroke="#1A1A1A" stroke-width="1.5"/>
+      <path d="M0 0 L380 240 L760 0" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.55"/>
+    </g>
+    <g transform="translate(600 420)">
+      <circle r="118" fill="#C49A3A"/>
+      <circle r="118" fill="none" stroke="#8C5A33" stroke-width="6" opacity="0.55"/>
+      <text x="0" y="22" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="600" fill="#8C5A33">P&amp;H</text>
+    </g>
+  </svg>
+</template>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Paulien &amp; Harm-Jan" />
+<meta property="og:description" content="26 augustus 2026" />
+<meta property="og:image" content="assets/envelop-preview.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Paulien &amp; Harm-Jan" />
+<meta name="twitter:description" content="26 augustus 2026" />
+<meta name="twitter:image" content="assets/envelop-preview.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — overridden live by Tweaks panel
+   ============================================================ */
+:root {
+  /* warm palette (default) */
+  --bg: #F5F2ED;
+  --bg-soft: #EFEAE1;
+  --ink: #1A1A1A;
+  --ink-soft: #2B2B2B;
+  --muted: #6B6258;
+  --line: #D7D0C3;
+  --accent: #2C3B2D;
+  --accent-soft: #3B4D3C;
+  --on-accent: #EFEAE1;
+
+  /* type */
+  --display: "Cormorant Garamond", "Times New Roman", serif;
+  --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* dress-code swatches */
+  --c-navy: #1F2A44;
+  --c-forest: #2C3B2D;
+  --c-sand: #C9B58F;
+  --c-brown: #4A332A;
+  --c-lightblue: #9DB2C5;
+  --c-sage: #95A189;
+  --c-mustard: #C49A3A;
+  --c-terracotta: #B86E4A;
+  --c-cognac: #8C5A33;
+}
+
+/* cool palette */
+[data-palette="cool"] {
+  --bg: #F1F1EE;
+  --bg-soft: #E7E7E2;
+  --ink: #14171A;
+  --ink-soft: #20242A;
+  --muted: #5A6068;
+  --line: #CDCFCB;
+  --accent: #1F3A3B;
+  --accent-soft: #2A4A4B;
+  --on-accent: #ECECE8;
+}
+
+/* mono palette */
+[data-palette="mono"] {
+  --bg: #F4F2EE;
+  --bg-soft: #E9E7E2;
+  --ink: #0E0E0E;
+  --ink-soft: #1E1E1E;
+  --muted: #6E6A66;
+  --line: #D2CFC8;
+  --accent: #161613;
+  --accent-soft: #2A2A26;
+  --on-accent: #EFEAE1;
+}
+
+/* font choices */
+[data-font="serif"]   { --display: "Cormorant Garamond", "Times New Roman", serif; }
+[data-font="playfair"]{ --display: "Playfair Display", "Times New Roman", serif; }
+[data-font="dmserif"] { --display: "DM Serif Display", "Times New Roman", serif; }
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+
+::selection { background: var(--accent); color: var(--on-accent); }
+
+/* utility */
+.eyebrow {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.display {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+.italic { font-style: italic; }
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+  border: 0;
+  width: 100%;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.nav-mark {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--on-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.nav-mark .amp { font-size: 16px; opacity: 0.7; }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  text-decoration: none;
+  opacity: 0.78;
+  transition: opacity 0.25s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--on-accent);
+  transition: right 0.4s cubic-bezier(.6,.05,.2,1);
+}
+.nav-links a:hover { opacity: 1; }
+.nav-links a:hover::after { right: 0; }
+
+.nav-date {
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.nav-burger {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--on-accent);
+  padding: 6px;
+}
+.nav-burger svg { width: 22px; height: 22px; }
+
+@media (max-width: 880px) {
+  .nav-inner { padding: 14px 22px; }
+  .nav-date { display: none; }
+  .nav-links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--accent);
+    padding: 16px 22px 22px;
+    gap: 16px;
+    transform: translateY(-8px);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-links.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .nav-burger { display: inline-flex; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 48px 100px;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 72px;
+  align-items: center;
+}
+.hero-left { position: relative; }
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow .line { width: 36px; height: 1px; background: var(--ink); opacity: 0.4; }
+
+.hero-title {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  font-size: clamp(64px, 9.5vw, 156px);
+}
+.hero-title .name { font-style: italic; display: block; }
+.hero-title .amp  {
+  display: block;
+  font-style: italic;
+  font-size: 0.6em;
+  color: var(--muted);
+  margin: -0.05em 0 -0.05em 0.18em;
+  font-weight: 300;
+}
+
+.hero-meta {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink); opacity: 0.5; }
+.hero-meta .label {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 44px;
+  flex-wrap: wrap;
+}
+
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.35s cubic-bezier(.6,.05,.2,1), background 0.3s, color 0.3s, border-color 0.3s;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ink);
+}
+.btn--solid { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.btn--solid:hover { background: var(--accent-soft); transform: translateY(-1px); }
+.btn--ghost { border-color: var(--ink); color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--bg); transform: translateY(-1px); }
+.btn--light { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+.btn--light:hover { background: var(--bg-soft); transform: translateY(-1px); }
+.btn .arrow {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(.6,.05,.2,1);
+}
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* hero photos */
+.hero-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  position: relative;
+}
+.photo-pill {
+  position: relative;
+  aspect-ratio: 0.62 / 1;
+  border-radius: 999px 999px 8px 8px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.photo-pill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.02);
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter 0.6s;
+}
+.photo-pill:hover img { transform: scale(1.04); filter: grayscale(60%) contrast(1.05); }
+.photo-pill .num {
+  position: absolute;
+  bottom: 18px;
+  right: 22px;
+  font-family: var(--display);
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  mix-blend-mode: difference;
+}
+.photo-pill .pill-cap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -28px;
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* hero variant 2: single large photo */
+[data-hero="2"] .hero-photos { grid-template-columns: 1fr; }
+[data-hero="2"] .hero-photos .photo-pill { aspect-ratio: 0.85 / 1; }
+[data-hero="2"] .hero-photos .photo-pill:nth-child(n+2) { display: none; }
+
+/* hero variant 3: stacked / staggered */
+[data-hero="3"] .hero-photos {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+}
+[data-hero="3"] .hero-photos .photo-pill:nth-child(1) { margin-top: 40px; aspect-ratio: 0.6/1; }
+[data-hero="3"] .hero-photos .photo-pill:nth-child(2) { margin-top: 0; aspect-ratio: 0.6/1.2; }
+[data-hero="3"] .hero-photos .photo-pill:nth-child(3) { margin-top: 60px; aspect-ratio: 0.6/1; }
+
+/* "you are invited" stamp */
+.invite-stamp {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 132px;
+  height: 132px;
+  display: grid;
+  place-items: center;
+}
+.invite-stamp svg { width: 100%; height: 100%; }
+.invite-stamp svg text {
+  font-family: var(--body);
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  fill: var(--ink);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.invite-stamp .core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--ink);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.invite-stamp .ring { animation: spin 22s linear infinite; transform-origin: 50% 50%; }
+
+@media (max-width: 980px) {
+  .hero { padding: 40px 22px 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .invite-stamp { position: static; margin-top: 32px; width: 110px; height: 110px; }
+}
+
+/* ============================================================
+   MARQUEE divider
+   ============================================================ */
+.marquee {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding: 18px 0;
+  background: var(--bg);
+}
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
+  width: max-content;
+}
+.marquee-track span {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.marquee-track .dot { font-style: normal; opacity: 0.4; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ============================================================
+   VERSE
+   ============================================================ */
+.verse {
+  padding: 140px 48px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.verse .deco {
+  width: 60px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.5;
+  margin: 0 auto 40px;
+}
+.verse blockquote {
+  margin: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.verse cite {
+  display: block;
+  margin-top: 36px;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) { .verse { padding: 90px 22px; } }
+
+/* ============================================================
+   PROGRAMME
+   ============================================================ */
+.programme {
+  background: var(--bg);
+  padding: 120px 48px;
+  border-top: 1px solid var(--line);
+}
+.programme-inner { max-width: 1100px; margin: 0 auto; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+}
+.section-head h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 72px);
+  margin: 8px 0 0;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--ink);
+}
+.section-head .lead {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-row {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 40px;
+  align-items: baseline;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  transition: padding 0.4s ease;
+}
+.timeline-row:last-child { border-bottom: 1px solid var(--line); }
+.timeline-row:hover { padding-left: 12px; }
+.timeline-time {
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1;
+}
+.timeline-title {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.timeline-ico {
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  color: var(--ink);
+  justify-self: end;
+  align-self: center;
+}
+.timeline-ico svg {
+  width: 44px;
+  height: 44px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.timeline-sub {
+  display: block;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.timeline-tag {
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .programme { padding: 80px 22px; }
+  .timeline-row { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
+  .timeline-time { font-size: 32px; }
+  .timeline-title { font-size: 22px; }
+  .timeline-tag { justify-self: start; }
+}
+
+/* ============================================================
+   INFO
+   ============================================================ */
+.info {
+  background: var(--bg-soft);
+  padding: 120px 48px;
+}
+.info-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.info-card h3 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 36px;
+  margin: 12px 0 18px;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+.locatie-photo {
+  width: min(560px, 70vw);
+  margin: 0 auto 80px;
+  aspect-ratio: 0.95 / 1;
+  border-radius: 999px 999px 8px 8px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+}
+.locatie-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  filter: grayscale(100%) contrast(1.04);
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter 0.6s;
+}
+.locatie-photo:hover img { transform: scale(1.04); filter: grayscale(50%) contrast(1.06); }
+.info-card p { color: var(--ink-soft); max-width: 44ch; }
+.info-card .map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+  transition: gap 0.3s, color 0.3s;
+}
+.info-card .map-link:hover { gap: 16px; color: var(--accent); }
+
+.dresscode-block { margin-top: 32px; }
+.dresscode-block + .dresscode-block { margin-top: 22px; }
+.dresscode-label {
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.swatches {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+}
+.swatch .dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.4s cubic-bezier(.6,.05,.2,1);
+}
+.swatch:hover .dot { transform: translateY(-3px) scale(1.06); }
+.swatch .name {
+  font-family: var(--body);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.info-aside {
+  padding-top: 12px;
+}
+.info-list { list-style: none; padding: 0; margin: 22px 0 0; }
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.info-list li:last-child { border-bottom: 1px solid var(--line); }
+.info-list .k { color: var(--muted); font-family: var(--body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+.info-list .v { font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink); }
+
+@media (max-width: 880px) {
+  .info { padding: 80px 22px; }
+  .info-inner { grid-template-columns: 1fr; gap: 56px; }
+  .locatie-photo { width: 78vw; margin-bottom: 56px; }
+}
+
+/* ============================================================
+   RSVP
+   ============================================================ */
+.rsvp {
+  position: relative;
+  padding: 140px 48px;
+  color: var(--on-accent);
+  overflow: hidden;
+  isolation: isolate;
+}
+.rsvp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/photo-03.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(1.1) brightness(0.55);
+  z-index: -2;
+}
+.rsvp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,28,20,0.72), rgba(20,28,20,0.88));
+  z-index: -1;
+}
+.rsvp-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.rsvp h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  margin: 24px 0 36px;
+  color: var(--on-accent);
+}
+.rsvp p { color: rgba(239,234,225,0.78); max-width: 50ch; }
+.rsvp-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.65);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.rsvp-eyebrow .l { width: 28px; height: 1px; background: rgba(239,234,225,0.5); }
+.deadline-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 20px 28px;
+  border: 1px solid rgba(239,234,225,0.25);
+  border-radius: 999px;
+}
+.deadline-badge .k {
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.65);
+}
+.deadline-badge .v {
+  font-family: var(--display);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--on-accent);
+  letter-spacing: 0.02em;
+}
+
+/* form */
+.rsvp-form {
+  background: rgba(239,234,225,0.04);
+  border: 1px solid rgba(239,234,225,0.15);
+  border-radius: 4px;
+  padding: 36px;
+  backdrop-filter: blur(4px);
+}
+.rsvp-form .row { display: grid; gap: 22px; }
+.rsvp-form .grid-2 { grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+
+.extra-names {
+  display: grid;
+  gap: 22px;
+}
+.extra-names .field {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: extraNameIn 0.55s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.extra-names .field.is-leaving {
+  animation: extraNameOut 0.32s cubic-bezier(.5,.05,.7,.2) forwards;
+}
+@keyframes extraNameIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes extraNameOut {
+  to { opacity: 0; transform: translateY(-6px); height: 0; margin: 0; }
+}
+.field label {
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.7);
+}
+.field input,
+.field textarea {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(239,234,225,0.3);
+  color: var(--on-accent);
+  font-family: var(--body);
+  font-size: 15px;
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.3s;
+  resize: none;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(239,234,225,0.35); }
+.field input:focus,
+.field textarea:focus { border-color: var(--on-accent); }
+.field textarea { min-height: 70px; }
+
+/* toggle */
+.toggle-group {
+  display: flex;
+  background: rgba(239,234,225,0.06);
+  border: 1px solid rgba(239,234,225,0.18);
+  border-radius: 999px;
+  padding: 4px;
+  width: fit-content;
+}
+.toggle-group button {
+  border: 0;
+  background: transparent;
+  color: rgba(239,234,225,0.7);
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s;
+}
+.toggle-group button.is-active {
+  background: var(--on-accent);
+  color: var(--accent);
+}
+
+.rsvp-form .submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* bijdrage block */
+.bijdrage-block {
+  margin-top: 6px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(239,234,225,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bijdrage-label {
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.7);
+}
+.toggle-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--on-accent);
+  width: fit-content;
+}
+.toggle-check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.toggle-check .box {
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(239,234,225,0.4);
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  transition: background 0.25s, border-color 0.25s;
+  flex-shrink: 0;
+}
+.toggle-check .tick {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.25s, transform 0.3s cubic-bezier(.6,.05,.2,1);
+}
+.toggle-check input:checked + .box {
+  background: var(--on-accent);
+  border-color: var(--on-accent);
+}
+.toggle-check input:checked + .box .tick {
+  opacity: 1;
+  transform: scale(1);
+}
+.toggle-check:hover .box { border-color: var(--on-accent); }
+
+.bijdrage-extra {
+  display: grid;
+  gap: 22px;
+  overflow: hidden;
+}
+.bijdrage-extra[hidden] { display: none; }
+.bijdrage-extra .field {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: extraNameIn 0.55s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.bijdrage-extra .field:nth-child(2) { animation-delay: 80ms; }
+
+/* select styled to match other inputs */
+.select-wrap { position: relative; }
+.select-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(239,234,225,0.3);
+  color: var(--on-accent);
+  font-family: var(--body);
+  font-size: 15px;
+  padding: 10px 28px 10px 0;
+  outline: none;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+.select-wrap select:focus { border-color: var(--on-accent); }
+.select-wrap select option {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.select-wrap .caret {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(239,234,225,0.55);
+  pointer-events: none;
+  font-size: 12px;
+}
+.rsvp-form .submit-row .note {
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.5);
+}
+
+.rsvp-success {
+  display: none;
+  padding: 24px;
+  margin-top: 24px;
+  border: 1px solid rgba(239,234,225,0.4);
+  border-radius: 4px;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--on-accent);
+  text-align: center;
+}
+.rsvp-form.is-sent .row,
+.rsvp-form.is-sent .submit-row { display: none; }
+.rsvp-form.is-sent .rsvp-success { display: block; }
+
+@media (max-width: 980px) {
+  .rsvp { padding: 80px 22px; }
+  .rsvp-inner { grid-template-columns: 1fr; gap: 48px; }
+  .rsvp-form { padding: 24px; }
+  .rsvp-form .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   GIFTS
+   ============================================================ */
+.gifts { padding: 120px 48px; background: var(--bg); }
+.gifts-inner { max-width: 1200px; margin: 0 auto; }
+.gifts h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 84px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin: 12px 0 22px;
+  max-width: 18ch;
+}
+.gifts .lead { max-width: 56ch; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.gifts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 64px;
+}
+.gift-card {
+  position: relative;
+  padding: 36px 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  transition: background 0.4s, transform 0.4s cubic-bezier(.6,.05,.2,1), border-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 200px;
+}
+.gift-card:hover {
+  background: var(--bg-soft);
+  transform: translateY(-3px);
+  border-color: var(--ink-soft);
+}
+.gift-card .ico {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+}
+.gift-card .ico svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.2; }
+.gift-card .num {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+}
+.gift-card h4 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 26px;
+  margin: 0;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.gift-card p {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.gift-card.is-bank { background: var(--ink); color: var(--bg); border-color: var(--ink); grid-column: span 1; }
+.gift-card.is-bank .ico { border-color: rgba(239,234,225,0.3); color: var(--bg); }
+.gift-card.is-bank h4 { color: var(--bg); }
+.gift-card.is-bank p { color: rgba(239,234,225,0.6); }
+.gift-card.is-bank .num { color: rgba(239,234,225,0.45); }
+
+@media (max-width: 880px) {
+  .gifts { padding: 80px 22px; }
+  .gifts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .gifts-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CEREMONIEMEESTERS
+   ============================================================ */
+.hosts {
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 140px 48px;
+}
+.hosts-inner { max-width: 1200px; margin: 0 auto; }
+.hosts-head { max-width: 800px; margin-bottom: 72px; }
+.hosts-head .eyebrow { color: rgba(239,234,225,0.6); }
+.hosts h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(40px, 5.5vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 14px 0 0;
+  color: var(--on-accent);
+}
+.hosts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.host-card {
+  border: 1px solid rgba(239,234,225,0.18);
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 28px;
+  align-items: center;
+  transition: background 0.4s, border-color 0.4s;
+}
+.host-card:hover { background: rgba(239,234,225,0.04); border-color: rgba(239,234,225,0.4); }
+.host-portrait {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 36px;
+  color: rgba(239,234,225,0.7);
+  overflow: hidden;
+  border: 1px solid rgba(239,234,225,0.2);
+  flex-shrink: 0;
+}
+.host-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: scale(1.45) translateY(5%);
+  transform-origin: center top;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.host-card:hover .host-portrait img { transform: scale(1.52) translateY(5%); }
+.host-card h4 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0 0 4px;
+  color: var(--on-accent);
+}
+.host-card .role {
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(239,234,225,0.6);
+  margin-bottom: 16px;
+}
+.host-card .tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--on-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(239,234,225,0.3);
+  padding-bottom: 4px;
+  transition: border-color 0.3s, gap 0.3s;
+}
+.host-card .tel:hover { border-color: var(--on-accent); gap: 14px; }
+
+@media (max-width: 880px) {
+  .hosts { padding: 80px 22px; }
+  .hosts-grid { grid-template-columns: 1fr; }
+  .host-card { padding: 24px; grid-template-columns: 80px 1fr; gap: 18px; }
+  .host-portrait { width: 80px; height: 80px; font-size: 28px; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot {
+  background: var(--bg);
+  padding: 100px 48px 56px;
+  text-align: center;
+}
+.foot .deco { width: 60px; height: 1px; background: var(--ink); opacity: 0.5; margin: 0 auto 32px; }
+.foot .mark {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(72px, 11vw, 160px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.foot .meta {
+  margin-top: 28px;
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.foot .credits {
+  margin-top: 72px;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   FADE-INS
+   ============================================================ */
+.fx {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);
+}
+.fx.is-in { opacity: 1; transform: translateY(0); }
+.fx-d1 { transition-delay: 0.08s; }
+.fx-d2 { transition-delay: 0.18s; }
+.fx-d3 { transition-delay: 0.28s; }
+.fx-d4 { transition-delay: 0.38s; }
+
+/* ============================================================
+   TWEAKS panel
+   ============================================================ */
+.tweaks {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 280px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  z-index: 200;
+  display: none;
+  font-family: var(--body);
+  color: var(--ink);
+}
+.tweaks.is-open { display: block; }
+.tweaks-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.tweaks h5 {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.tweaks .close {
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1;
+}
+.tweak-row { margin-bottom: 14px; }
+.tweak-row:last-child { margin-bottom: 0; }
+.tweak-row .label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.seg {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  padding: 4px;
+}
+.seg button {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 6px;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s;
+}
+.seg button.is-active { background: var(--ink); color: var(--bg); }
+
+/* ============================================================
+   PROGRAMMA — per-kaart filter (26a / 26b / 26c)
+   ============================================================ */
+.timeline-row[data-show] { display: none; }
+body[data-kaart="26a"] .timeline-row[data-show~="26a"],
+body[data-kaart="26b"] .timeline-row[data-show~="26b"],
+body[data-kaart="26c"] .timeline-row[data-show~="26c"] {
+  display: grid;
+}
+
+/* ============================================================
+   ENVELOP INTRO — full-screen poster, click to play video, fade out
+   ============================================================ */
+.envelop-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 1s ease;
+  overflow: hidden;
+}
+.envelop-intro.is-fading { opacity: 0; pointer-events: none; }
+.envelop-intro.is-done { display: none; }
+.envelop-intro__poster,
+.envelop-intro__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.envelop-intro__video {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.envelop-intro.is-playing .envelop-intro__video { opacity: 1; }
+.envelop-intro.is-playing .envelop-intro__poster {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.envelop-intro__hint {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+  background: rgba(0,0,0,0.32);
+  border: 1px solid rgba(255,255,255,0.32);
+  padding: 14px 28px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: envelopHintPulse 2.4s ease-in-out infinite;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.envelop-intro.is-playing .envelop-intro__hint {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+@keyframes envelopHintPulse {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.88; }
+  50%      { transform: translateX(-50%) translateY(-5px); opacity: 1; }
+}
+.envelop-intro__skip {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-family: var(--body);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.18);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+  z-index: 2;
+}
+.envelop-intro__skip:hover { color: #fff; background: rgba(0,0,0,0.45); }
+body.is-intro-locked { overflow: hidden; }
+@media (max-width: 720px) {
+  .envelop-intro__hint { bottom: 42px; font-size: 10px; padding: 12px 22px; letter-spacing: 0.28em; }
+  .envelop-intro__skip { top: 18px; right: 18px; font-size: 9px; }
+}
+
+/* ============================================================
+   MOBILE REFINEMENT  (iPhone 12/13/14/15 — 375–430px)
+   Goal: feel like an invitation, not a zoomed-in detail.
+   ============================================================ */
+@media (max-width: 640px) {
+
+  /* --- ENVELOPE INTRO: card-style, never touches edges --- */
+  .envelop-intro {
+    background: #14110d;            /* deep warm — frames the card */
+    height: 100svh;
+    height: 100dvh;
+    padding:
+      max(28px, env(safe-area-inset-top))
+      20px
+      max(28px, env(safe-area-inset-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* subtle warm vignette behind the card */
+  .envelop-intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 38%, rgba(60,42,22,0.55), transparent 62%),
+      radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.55), transparent 60%);
+    pointer-events: none;
+  }
+
+  .envelop-intro__poster,
+  .envelop-intro__video {
+    position: relative;
+    inset: auto;
+    top: auto; left: auto;
+    width: min(88vw, 440px);
+    height: auto;
+    aspect-ratio: 16 / 10;            /* slight portrait squeeze; keeps seal smaller */
+    object-fit: cover;
+    object-position: center 52%;
+    border-radius: 8px;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.06) inset,
+      0 30px 60px -18px rgba(0,0,0,0.65),
+      0 8px 22px -8px rgba(0,0,0,0.45);
+  }
+  .envelop-intro__video {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .envelop-intro__hint {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 38px);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    padding: 13px 24px;
+    background: rgba(245,242,237,0.10);
+    border-color: rgba(245,242,237,0.28);
+    color: rgba(245,242,237,0.94);
+  }
+
+  .envelop-intro__skip {
+    top: calc(env(safe-area-inset-top, 0px) + 14px);
+    right: 16px;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    padding: 7px 12px;
+    background: transparent;
+    border-color: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.62);
+  }
+
+  /* --- HERO: names + photo side-by-side (like desktop), then meta/CTA full width --- */
+  .hero {
+    padding: 36px 24px 68px;
+  }
+  /* names occupy the left column; the photo sits beside them on the right.
+     meta + CTA span the full width on rows below. */
+  .hero-grid {
+    grid-template-columns: 1fr 0.74fr;
+    grid-template-areas:
+      "eyebrow photo"
+      "title   photo"
+      "meta    meta"
+      "cta     cta";
+    column-gap: 18px;
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .hero-left { display: contents; }
+
+  .hero-eyebrow {
+    grid-area: eyebrow;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-eyebrow .line { width: 24px; }
+  .hero-eyebrow .eyebrow { font-size: 9.5px; letter-spacing: 0.26em; }
+
+  .hero-title {
+    grid-area: title;
+    font-size: clamp(30px, 9.6vw, 50px);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .hero-title .name { white-space: nowrap; }
+  .hero-title .amp {
+    font-size: 0.62em;
+    margin: -0.02em 0 -0.02em 0.06em;
+  }
+
+  .hero-right {
+    grid-area: photo;
+    align-self: stretch;
+  }
+  .hero-photos {
+    grid-template-columns: 1fr;
+    gap: 0;
+    height: 100%;
+  }
+  .hero-photos .photo-pill {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 230px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 200px 200px 8px 8px;
+  }
+  .hero-photos .photo-pill:nth-child(n+2) { display: none; }
+  .hero-photos .photo-pill .num { display: none; }
+
+  .hero-meta {
+    grid-area: meta;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+  }
+  .hero-meta .label {
+    font-size: 10px;
+    letter-spacing: 0.26em;
+  }
+
+  .hero-cta {
+    grid-area: cta;
+    margin-top: 22px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cta .btn {
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 10.5px;
+    letter-spacing: 0.26em;
+  }
+
+  /* tighten nav slightly for small phones */
+  .nav-inner { padding: 12px 18px; }
+  .nav-mark { font-size: 20px; }
+}
+
+/* ---- Sections below the fold: calm rhythm, safe gutters ---- */
+@media (max-width: 640px) {
+
+  /* consistent horizontal gutter + vertical rhythm */
+  .verse,
+  .programme,
+  .info,
+  .rsvp,
+  .gifts,
+  .hosts,
+  .foot { padding-left: 24px; padding-right: 24px; }
+
+  .verse      { padding-top: 76px;  padding-bottom: 76px; }
+  .programme  { padding-top: 72px;  padding-bottom: 72px; }
+  .info       { padding-top: 72px;  padding-bottom: 76px; }
+  .rsvp       { padding-top: 76px;  padding-bottom: 76px; }
+  .gifts      { padding-top: 72px;  padding-bottom: 76px; }
+  .hosts      { padding-top: 76px;  padding-bottom: 76px; }
+  .foot       { padding-top: 80px;  padding-bottom: 48px; }
+
+  /* VERSE — keep it intimate */
+  .verse blockquote { font-size: clamp(30px, 8.4vw, 42px); line-height: 1.22; }
+  .verse .deco { margin-bottom: 32px; }
+
+  /* MARQUEE — smaller, calmer */
+  .marquee { padding: 14px 0; }
+  .marquee-track { gap: 40px; }
+  .marquee-track span { font-size: 18px; }
+
+  /* PROGRAMME */
+  .section-head { margin-bottom: 40px; }
+  .section-head h2 { font-size: clamp(34px, 9vw, 48px); }
+  .timeline-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "time ico"
+      "main ico";
+    column-gap: 16px;
+    row-gap: 4px;
+    align-items: center;
+    padding: 22px 0;
+  }
+  .timeline-row:hover { padding-left: 0; }
+  .timeline-time { grid-area: time; font-size: 34px; }
+  .timeline-main { grid-area: main; }
+  .timeline-ico { grid-area: ico; width: 46px; height: 46px; }
+  .timeline-ico svg { width: 40px; height: 40px; }
+  .timeline-title { font-size: 23px; }
+  .timeline-sub { margin-top: 6px; }
+
+  /* INFO */
+  .info-inner { gap: 48px; }
+  .locatie-photo {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 48px;
+    aspect-ratio: 0.86 / 1;
+  }
+  .info-card h3,
+  .info-aside h3 { font-size: 30px; }
+  .info-card p { max-width: none; }
+  .swatches { gap: 12px; }
+  .swatch .dot { width: 38px; height: 38px; }
+  .info-list .v { font-size: 16px; }
+  .info-list li { padding: 14px 0; }
+  .dresscode-block { margin-top: 26px; }
+
+  /* RSVP */
+  .rsvp h2 { font-size: clamp(38px, 11vw, 60px); margin: 18px 0 26px; }
+  .rsvp-form { padding: 22px 20px; }
+  .deadline-badge { margin-top: 30px; padding: 16px 22px; }
+  .deadline-badge .v { font-size: 26px; }
+  .toggle-group { width: 100%; }
+  .toggle-group button { flex: 1; padding: 12px 8px; }
+  .rsvp-form .submit-row { flex-direction: column; align-items: stretch; gap: 14px; }
+  .rsvp-form .submit-row .btn { justify-content: center; width: 100%; }
+  .rsvp-form .submit-row .note { text-align: center; }
+  .field input,
+  .field textarea,
+  .select-wrap select { font-size: 16px; } /* prevents iOS zoom-on-focus */
+
+  /* GIFTS — shorter cards, snug stack */
+  .gifts h2 { font-size: clamp(38px, 11vw, 60px); }
+  .gifts .lead { font-size: 14px; }
+  .gifts-grid { gap: 12px; margin-top: 44px; }
+  .gift-card { min-height: 0; padding: 26px 22px; gap: 16px; }
+  .gift-card h4 { font-size: 24px; }
+
+  /* HOSTS — centered, generous portrait */
+  .hosts h2 { font-size: clamp(34px, 9.5vw, 52px); }
+  .hosts-head { margin-bottom: 44px; }
+  .host-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+  .host-portrait { width: 132px; height: 132px; }
+  .host-card .tel { font-size: 20px; }
+
+  /* FOOTER */
+  .foot .mark { font-size: clamp(56px, 17vw, 96px); }
+  .foot .meta { font-size: 10px; letter-spacing: 0.26em; }
+  .foot .credits { margin-top: 56px; }
+
+  /* TWEAKS panel — never wider than the screen */
+  .tweaks {
+    width: calc(100vw - 28px);
+    max-width: 300px;
+    right: 14px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  }
+}
+
+/* even smaller — iPhone SE */
+@media (max-width: 380px) {
+  .envelop-intro__poster,
+  .envelop-intro__video { width: 86vw; }
+  .hero { padding: 32px 20px 60px; }
+  .hero-grid { column-gap: 14px; }
+  .hero-title { font-size: clamp(26px, 9.4vw, 40px); }
+  .verse, .programme, .info, .rsvp, .gifts, .hosts, .foot {
+    padding-left: 20px; padding-right: 20px;
+  }
+}
+</style>
+</head>
+<body data-palette="warm" data-font="serif" data-hero="1" data-kaart="26b">
+<script>
+(function () {
+  try {
+    var code = (new URLSearchParams(window.location.search).get("kaart") || "").toLowerCase();
+    if (["26a", "26b", "26c"].indexOf(code) !== -1) {
+      document.body.setAttribute("data-kaart", code);
+    }
+  } catch (e) {}
+})();
+</script>
+
+<!-- ============================================================
+     ENVELOP INTRO — fullscreen poster, click to play video
+     ============================================================ -->
+<div class="envelop-intro" id="envelopIntro" role="button" tabindex="0" aria-label="Open de uitnodiging">
+  <img class="envelop-intro__poster" src="assets/envelop-preview.jpg" alt="Verzegelde envelop met P&amp;H wapen" />
+  <video class="envelop-intro__video" id="envelopVideo"
+         src="assets/envelop.mp4"
+         poster="assets/envelop-preview.jpg"
+         muted playsinline preload="auto"></video>
+  <div class="envelop-intro__hint">Klik om te openen</div>
+  <a class="envelop-intro__skip" id="envelopSkip" href="#" aria-label="Sla intro over">Overslaan →</a>
+</div>
+<script>
+(function () {
+  var intro = document.getElementById("envelopIntro");
+  if (!intro) return;
+  var video = document.getElementById("envelopVideo");
+  var skip  = document.getElementById("envelopSkip");
+  var started = false, dismissed = false;
+
+  document.body.classList.add("is-intro-locked");
+
+  function dismiss() {
+    if (dismissed) return;
+    dismissed = true;
+    intro.classList.add("is-fading");
+    setTimeout(function () {
+      intro.classList.add("is-done");
+      document.body.classList.remove("is-intro-locked");
+    }, 1000);
+  }
+
+  function start() {
+    if (started || dismissed) return;
+    started = true;
+    intro.classList.add("is-playing");
+    try { video.currentTime = 0; } catch (e) {}
+    var p = video.play();
+    if (p && p.catch) p.catch(function () { dismiss(); });
+  }
+
+  intro.addEventListener("click", function (e) {
+    if (e.target === skip) return;     // skip-link handles its own click
+    if (!started) start();
+  });
+  intro.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") && !started) {
+      e.preventDefault();
+      start();
+    } else if (e.key === "Escape") {
+      dismiss();
+    }
+  });
+  if (skip) skip.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dismiss();
+  });
+  video.addEventListener("ended", dismiss);
+  video.addEventListener("error", dismiss);
+})();
+</script>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" data-screen-label="01 Nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">P <span class="amp">&amp;</span> H</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#programma">Programma</a></li>
+      <li><a href="#cadeau">Cadeau</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-date">26 · 08 · 2026</div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero" id="top" data-screen-label="02 Hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow fx">
+        <span class="eyebrow">Welkom op onze bruiloft!</span>
+      </div>
+
+      <h1 class="hero-title fx fx-d1">
+        <span class="name">Paulien</span>
+        <span class="amp">&amp;</span>
+        <span class="name">Harm-Jan</span>
+      </h1>
+
+      <div class="hero-meta fx fx-d2">
+        <span class="label">26 Augustus 2026</span>
+        <span class="dot"></span>
+        <span class="label">Slot Doddendael</span>
+      </div>
+
+      <div class="hero-cta fx fx-d3">
+        <a href="#rsvp" class="btn btn--solid">RSVP <span class="arrow">→</span></a>
+        <a href="#" class="btn btn--ghost" id="calBtn">Voeg toe aan agenda</a>
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-photos fx fx-d2">
+        <figure class="photo-pill">
+          <img src="assets/photo-01.jpg" alt="Paulien & Harm-Jan" />
+          <span class="num">
+</span>
+        </figure>
+        <figure class="photo-pill">
+          <img src="assets/photo-02.jpg" alt="Paulien & Harm-Jan" />
+          <span class="num">02.</span>
+        </figure>
+        <figure class="photo-pill">
+          <img src="assets/photo-03.jpg" alt="Paulien & Harm-Jan" />
+          <span class="num">03.</span>
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     VERSE
+     ============================================================ -->
+<section class="verse" data-screen-label="03 Verse">
+  <div class="deco fx"></div>
+  <blockquote class="fx fx-d1">
+    &ldquo;Wie op Hem vertrouwen,<br/>omringt Hij met liefde.&rdquo;
+  </blockquote>
+  <cite class="fx fx-d2">Psalm 32 : 10</cite>
+  <div class="deco fx fx-d3" style="margin: 40px auto 0;"></div>
+</section>
+
+<!-- ============================================================
+     PROGRAMME
+     ============================================================ -->
+<section class="programme" id="programma" data-screen-label="04 Programma">
+  <div class="programme-inner">
+    <div class="section-head">
+      <div class="fx">
+        <span class="eyebrow">26 AUGUSTUS 2026</span>
+        <h2>Het programma</h2>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- Kerkdienst — 26a + 26b -->
+      <div class="timeline-row fx" data-show="26a 26b">
+        <div class="timeline-time">13<span>:15</span></div>
+        <div class="timeline-main">
+          <div class="timeline-title">Kerkdienst</div>
+        </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4M10 4h4"/><path d="M12 6 5 11v10h14V11z"/><path d="M9 21v-5a3 3 0 0 1 6 0v5"/></svg></span>
+      </div>
+
+      <!-- Toast & taart — 26a + 26b -->
+      <div class="timeline-row fx" data-show="26a 26b">
+        <div class="timeline-time">14<span>:30</span></div>
+        <div class="timeline-main">
+          <div class="timeline-title">Toast &amp; taart</div>
+          <span class="timeline-sub">Tot 15:30</span>
+        </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 21h6M12 21v-6"/><path d="M8 4h8l-1.2 7a2.8 2.8 0 0 1-5.6 0z"/><circle cx="16" cy="5.4" r=".55"/><circle cx="17.4" cy="8.4" r=".55"/></svg></span>
+      </div>
+
+      <!-- Diner — alleen 26b -->
+      <div class="timeline-row fx" data-show="26b">
+        <div class="timeline-time">17<span>:30</span></div>
+        <div class="timeline-main">
+          <div class="timeline-title">Diner</div>
+        </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3v3M10 3v2.6M12 3v3"/><path d="M8 6a2 2 0 0 0 4 0"/><path d="M10 6v15"/><path d="M16 3c-2 1-2 6 0 7v11"/></svg></span>
+      </div>
+
+      <!-- Borrel + Feest — 26b + 26c -->
+      <div class="timeline-row fx" data-show="26b 26c">
+        <div class="timeline-time">20<span>:00</span></div>
+        <div class="timeline-main">
+          <div class="timeline-title">Borrel &amp; feest</div>
+          <span class="timeline-sub">Tot 23:00</span>
+        </div>
+        <span class="timeline-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10.5 3l1.5 4.5L16.5 9l-4.5 1.5L10.5 15 9 10.5 4.5 9 9 7.5z"/><path d="M18 13.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INFO
+     ============================================================ -->
+<section class="info" data-screen-label="05 Info">
+  <div class="locatie-photo fx">
+    <img src="assets/slot-doddendael.jpg" alt="Slot Doddendael bij avondlicht" />
+  </div>
+  <div class="info-inner">
+    <div class="info-card fx">
+      <span class="eyebrow">De locatie</span>
+      <h3>Slot Doddendael</h3>
+      <p style="color: rgb(107, 98, 88)">Vanaf het begin van onze relatie wist Paulien het al zeker: ooit trouwen wij op Slot Doddendael.</p>
+      <p style="margin-top:14px"><strong style="font-weight:500">Binnenweg 2 · 6644 KD · Ewijk</strong></p>
+      <a class="map-link" href="https://maps.google.com/?q=Slot+Doddendael+Binnenweg+2+Ewijk" target="_blank" rel="noopener">Open in Google Maps <span>→</span></a>
+
+      <ul class="info-list">
+        <li>
+          <span class="k">Parkeren</span>
+          <span class="v">± 150 plaatsen</span>
+        </li>
+        <li>
+          <span class="k">Mindervaliden</span>
+          <span class="v">afzetten bij binnenplaats</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="info-aside fx fx-d1">
+      <span class="eyebrow">Dress code</span>
+      <h3 style="font-family: &quot;Cormorant Garamond&quot;, serif; font-style: italic; font-size: 32px;">Italian Chique</h3>
+      <p style="color: rgb(107, 98, 88)">Laat je inspireren door het gevoel van een Italiaanse zomeravond: warm, stijlvol en feestelijk. Een avond om mooi uit te pakken, in kleuren die passen bij la dolce vita.</p>
+
+      <div class="dresscode-block">
+        <div class="dresscode-label">Voor hem:</div>
+        <div class="swatches">
+          <div class="swatch" style="--c:rgb(79,90,58)"><span class="dot"></span><span class="name" style="color:rgb(79,90,58)">
+</span></div>
+          <div class="swatch" style="--c:var(--c-sand)"><span class="dot" style="background-color: rgb(214, 203, 185)"></span><span class="name">
+</span></div>
+          <div class="swatch" style="--c:var(--c-brown)"><span class="dot"></span><span class="name">
+</span></div>
+        </div>
+      </div>
+
+      <div class="dresscode-block">
+        <div class="dresscode-label">Voor haar:</div>
+        <div class="swatches">
+          <div class="swatch" style="--c:var(--c-lightblue)"><span class="dot"></span><span class="name">
+</span></div>
+          <div class="swatch" style="--c:var(--c-sage)"><span class="dot"></span><span class="name">
+</span></div>
+          <div class="swatch" style="--c:var(--c-mustard)"><span class="dot" style="background-color: rgb(245, 219, 106)"></span><span class="name">
+</span></div>
+          <div class="swatch" style="--c:var(--c-terracotta)"><span class="dot" style="background-color: rgb(231, 163, 140)"></span><span class="name">
+</span></div>
+          <div class="swatch" style="--c:var(--c-cognac)"><span class="dot" style="background-color: rgb(200, 121, 91)"></span><span class="name">
+</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RSVP
+     ============================================================ -->
+<section class="rsvp" id="rsvp" data-screen-label="06 RSVP">
+  <div class="rsvp-inner">
+    <div class="rsvp-copy fx">
+      <span class="rsvp-eyebrow">RSVP</span>
+      <h2>Laat je weten of je<br/><em>erbij bent?</em></h2>
+      <p>Je bent uitgenodigd voor de volledige dag: kerkdienst, borrel, diner en feest. Laat het ons graag voor onderstaande datum weten, dan kunnen we alles in goede banen leiden.</p>
+      <div class="deadline-badge">
+        <span class="k">Antwoord vóór</span>
+        <span class="v">03.08.26</span>
+      </div>
+    </div>
+
+    <form class="rsvp-form fx fx-d1" id="rsvpForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="rsvp-name">Naam persoon 1</label>
+          <input id="rsvp-name" name="name" type="text" placeholder="Voor- en achternaam" required />
+        </div>
+
+        <div id="extra-names" class="extra-names"></div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label>Aanwezig?</label>
+            <div class="toggle-group" data-toggle="attending">
+              <button type="button" class="is-active" data-value="ja">Ja, graag</button>
+              <button type="button" data-value="nee">Helaas niet</button>
+            </div>
+            <input type="hidden" name="attending" value="ja" />
+          </div>
+          <div class="field">
+            <label for="rsvp-count">Aantal personen</label>
+            <input id="rsvp-count" name="count" type="number" min="1" max="6" value="1" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="rsvp-diet">Dieetwensen</label>
+          <input id="rsvp-diet" name="diet" type="text" placeholder="Vegetarisch, allergieën, …" />
+        </div>
+
+        <div class="field">
+          <label for="rsvp-msg">Opmerkingen</label>
+          <textarea id="rsvp-msg" name="message" placeholder=""></textarea>
+        </div>
+
+        <div class="bijdrage-block">
+          <label class="toggle-check" for="bijdrage-toggle">
+            <input type="checkbox" id="bijdrage-toggle" name="bijdrage" />
+            <span class="box"><span class="tick">✓</span></span>
+            <span class="t">Ik wil graag een stukje doen</span>
+          </label>
+
+          <div class="bijdrage-extra" id="bijdrage-extra" hidden>
+            <div class="field">
+              <label for="bijdrage-type">Wat voor stukje?</label>
+              <div class="select-wrap">
+                <select id="bijdrage-type" name="bijdrage-type">
+                  <option value="">Maak een keuze…</option>
+                  <option>Speech</option>
+                  <option>Gedicht</option>
+                  <option>Muziek</option>
+                  <option>Dans</option>
+                  <option>Sketch</option>
+                  <option>Anders</option>
+                </select>
+                <span class="caret" aria-hidden="true">▾</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="bijdrage-namens">Namens wie?</label>
+              <input id="bijdrage-namens" name="bijdrage_namens" type="text" placeholder="Bijv. de collega's, de vriendengroep, familie…" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <span class="note">Antwoord vóór 03 Aug 2026</span>
+        <button type="submit" class="btn btn--light" id="rsvpSubmit">Verstuur <span class="arrow">→</span></button>
+      </div>
+
+      <div class="rsvp-success">
+        Dankjewel voor je aanmelding!
+        <br/><span style="font-family:var(--body);font-style:normal;font-size:12px;letter-spacing:.18em;text-transform:none;color:rgba(239,234,225,0.7);line-height:1.7;display:block;margin-top:14px;max-width:46ch">Heb je nog vragen? Neem contact op met Marijke (<a href="tel:+31629991333" style="color:inherit;border-bottom:1px solid rgba(239,234,225,0.4);text-decoration:none">06 2999 1333</a>) of Ruud (<a href="tel:+31620810321" style="color:inherit;border-bottom:1px solid rgba(239,234,225,0.4);text-decoration:none">06 2081 032</a>).</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     GIFTS
+     ============================================================ -->
+<section class="gifts" id="cadeau" data-screen-label="07 Cadeau">
+  <div class="gifts-inner">
+    <div class="fx">
+      <span class="eyebrow">WENSLIJST </span>
+      <h2>Wij gaan samen<br/><em>een huis verbouwen</em></h2>
+      <p class="lead">Ons mooiste cadeau is dat jullie deze dag met ons vieren. Wil je ons daarnaast iets meegeven? Dan zijn we heel blij met een bijdrage in een envelop.<br/><br/>Omdat we midden in de verbouwing zitten, krijgt jullie bijdrage straks een mooi plekje in ons nieuwe thuis. Denk aan een fijne bank, mooi servies, iets voor de tuin of een bijdrage aan de verbouwing zelf. Schrijf er vooral bij waar jullie bijdrage naartoe mag gaan.</p>
+    </div>
+
+    <div class="gifts-grid">
+      <div class="gift-card fx">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><path d="M3 12h18M12 6v12"/></svg></div>
+        <span class="num">01</span>
+        <h4>Gipsplaten</h4>
+        <p>Wand voor wand</p>
+      </div>
+      <div class="gift-card fx fx-d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18l8-12 10 12"/><path d="M7 18l4-6"/></svg></div>
+        <span class="num">02</span>
+        <h4>Hout &amp; balken</h4>
+        <p>Voor het dak boven ons hoofd</p>
+      </div>
+      <div class="gift-card fx fx-d2">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 4h12l-2 16H8z"/><path d="M6 8h12"/></svg></div>
+        <span class="num">03</span>
+        <h4>Stucwerk</h4>
+        <p>Glad op het oog</p>
+      </div>
+      <div class="gift-card fx">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 20l4-14h6l4 14"/><path d="M7 14h10"/></svg></div>
+        <span class="num">04</span>
+        <h4>Verf &amp; primer</h4>
+        <p>Een kleurkeuze per kamer</p>
+      </div>
+      <div class="gift-card fx fx-d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+        <span class="num">05</span>
+        <h4>Plank voor Plank</h4>
+        <p>Eiken, plank voor plank</p>
+      </div>
+      <div class="gift-card fx fx-d2">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3v6a3 3 0 006 0V3"/><rect x="8" y="10" width="8" height="11" rx="2"/></svg></div>
+        <span class="num">06</span>
+        <h4>Sanitair</h4>
+        <p>Kraan, douche, badkuip</p>
+      </div>
+      <div class="gift-card fx">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a5 5 0 00-3 9v3h6v-3a5 5 0 00-3-9z"/><path d="M10 18h4M11 21h2"/></svg></div>
+        <span class="num">07</span>
+        <h4>Verlichting</h4>
+        <p>Warm licht in elke hoek</p>
+      </div>
+      <div class="gift-card fx fx-d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 13v5h18v-5"/><path d="M5 13v-3a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 13a2 2 0 012-2h14a2 2 0 012 2"/><path d="M6 18v2M18 18v2"/></svg></div>
+        <span class="num">08</span>
+        <h4>Meubels</h4>
+        <p>Bank, tafel, kast</p>
+      </div>
+      <div class="gift-card fx fx-d2">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 7l-7 7v6h6l7-7"/></svg></div>
+        <span class="num">09</span>
+        <h4>Gereedschap</h4>
+        <p>Beter goed dan goedkoop</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CEREMONIEMEESTERS
+     ============================================================ -->
+<section class="hosts" id="contact" data-screen-label="08 Hosts">
+  <div class="hosts-inner">
+    <div class="hosts-head fx">
+      <span class="eyebrow" style="color:rgba(239,234,225,0.55)">VRAGEN?</span>
+      <h2>Neem contact op met de<br/><em>ceremoniemeesters</em></h2>
+    </div>
+
+    <div class="hosts-grid">
+      <article class="host-card fx">
+        <div class="host-portrait"><img src="assets/marijke.jpg" alt="Marijke Wierema" /></div>
+        <div>
+          <h4>Marijke Wierema</h4>
+          <div class="role">Vriendin van de bruid</div>
+          <a class="tel" href="tel:+31629991333">06 2999 1333 <span>→</span></a>
+        </div>
+      </article>
+      <article class="host-card fx fx-d1">
+        <div class="host-portrait"><img src="assets/ruud.jpg" alt="Ruud Kuiper" /></div>
+        <div>
+          <h4>Ruud Kuiper</h4>
+          <div class="role">Vriend van de bruidegom</div>
+          <a class="tel" href="tel:+31620810321">06 2081 032 <span>→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="foot" data-screen-label="09 Footer">
+  <div class="deco fx"></div>
+  <div class="meta fx fx-d2">26 Augustus 2026 · Slot Doddendael · Ewijk</div>
+  <div class="credits">2026</div>
+</footer>
+
+<!-- ============================================================
+     TWEAKS PANEL
+     ============================================================ -->
+<aside class="tweaks" id="tweaks">
+  <div class="tweaks-head">
+    <h5>Tweaks</h5>
+    <button class="close" id="tweaksClose" aria-label="Close">×</button>
+  </div>
+
+  <div class="tweak-row">
+    <span class="label">Palette</span>
+    <div class="seg" data-tweak="palette">
+      <button data-value="warm">Warm</button>
+      <button data-value="cool">Cool</button>
+      <button data-value="mono">Mono</button>
+    </div>
+  </div>
+
+  <div class="tweak-row">
+    <span class="label">Headline font</span>
+    <div class="seg" data-tweak="headlineFont">
+      <button data-value="serif">Cormorant</button>
+      <button data-value="playfair">Playfair</button>
+      <button data-value="dmserif">DM Serif</button>
+    </div>
+  </div>
+
+  <div class="tweak-row">
+    <span class="label">Hero variant</span>
+    <div class="seg" data-tweak="heroVariant">
+      <button data-value="1">Trio</button>
+      <button data-value="2">Single</button>
+      <button data-value="3">Staggered</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+/* ============================================================
+   TWEAKS — defaults persisted on disk
+   ============================================================ */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "palette": "warm",
+  "headlineFont": "serif",
+  "heroVariant": 2
+}/*EDITMODE-END*/;
+
+const state = { ...TWEAK_DEFAULTS };
+
+function applyTweaks() {
+  document.body.setAttribute("data-palette", state.palette);
+  document.body.setAttribute("data-font", state.headlineFont);
+  document.body.setAttribute("data-hero", String(state.heroVariant));
+
+  document.querySelectorAll(".seg").forEach(seg => {
+    const key = seg.getAttribute("data-tweak");
+    const value = String(state[key]);
+    seg.querySelectorAll("button").forEach(b => {
+      b.classList.toggle("is-active", b.getAttribute("data-value") === value);
+    });
+  });
+}
+
+document.querySelectorAll(".seg").forEach(seg => {
+  const key = seg.getAttribute("data-tweak");
+  seg.addEventListener("click", e => {
+    const btn = e.target.closest("button[data-value]");
+    if (!btn) return;
+    let v = btn.getAttribute("data-value");
+    if (key === "heroVariant") v = parseInt(v, 10);
+    state[key] = v;
+    applyTweaks();
+    window.parent.postMessage({ type: "__edit_mode_set_keys", edits: { [key]: v } }, "*");
+  });
+});
+
+applyTweaks();
+
+/* tweaks panel show/hide via host protocol */
+const tweaksEl = document.getElementById("tweaks");
+window.addEventListener("message", e => {
+  const t = e.data && e.data.type;
+  if (t === "__activate_edit_mode") tweaksEl.classList.add("is-open");
+  if (t === "__deactivate_edit_mode") tweaksEl.classList.remove("is-open");
+});
+document.getElementById("tweaksClose").addEventListener("click", () => {
+  tweaksEl.classList.remove("is-open");
+  window.parent.postMessage({ type: "__edit_mode_dismissed" }, "*");
+});
+window.parent.postMessage({ type: "__edit_mode_available" }, "*");
+
+/* ============================================================
+   NAV — mobile burger
+   ============================================================ */
+const navLinks = document.getElementById("navLinks");
+document.getElementById("navBurger").addEventListener("click", () => {
+  navLinks.classList.toggle("is-open");
+});
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("is-open")));
+
+/* ============================================================
+   FADE-IN observer
+   ============================================================ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) en.target.classList.add("is-in"); });
+}, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+document.querySelectorAll(".fx").forEach(el => io.observe(el));
+
+/* ============================================================
+   RSVP — attendance toggle + submit
+   ============================================================ */
+document.querySelectorAll('.toggle-group').forEach(tg => {
+  tg.addEventListener("click", e => {
+    const btn = e.target.closest("button[data-value]");
+    if (!btn) return;
+    tg.querySelectorAll("button").forEach(b => b.classList.toggle("is-active", b === btn));
+    const key = tg.getAttribute("data-toggle");
+    const hidden = tg.parentElement.querySelector(`input[name="${key}"]`);
+    if (hidden) hidden.value = btn.getAttribute("data-value");
+  });
+});
+
+const rsvpForm = document.getElementById("rsvpForm");
+
+/* dynamically render extra name fields based on count */
+const countInput = document.getElementById("rsvp-count");
+const extraNames = document.getElementById("extra-names");
+const firstNameLabel = document.querySelector('label[for="rsvp-name"]');
+
+function renderExtraNames() {
+  const total = Math.max(1, Math.min(6, parseInt(countInput.value, 10) || 1));
+  countInput.value = total;
+  firstNameLabel.textContent = total > 1 ? "Naam persoon 1" : "Naam";
+
+  const current = extraNames.querySelectorAll(".field:not(.is-leaving)");
+  const wanted = total - 1;
+
+  // remove extras
+  for (let i = current.length - 1; i >= wanted; i--) {
+    const f = current[i];
+    f.classList.add("is-leaving");
+    f.addEventListener("animationend", () => f.remove(), { once: true });
+  }
+
+  // add missing
+  for (let i = current.length; i < wanted; i++) {
+    const idx = i + 2;
+    const field = document.createElement("div");
+    field.className = "field";
+    field.style.animationDelay = ((i - current.length) * 60) + "ms";
+    const id = "rsvp-name-" + idx;
+    field.innerHTML =
+      '<label for="' + id + '">Naam persoon ' + idx + '</label>' +
+      '<input id="' + id + '" name="name-' + idx + '" type="text" placeholder="Voor- en achternaam" />';
+    extraNames.appendChild(field);
+  }
+}
+
+countInput.addEventListener("input", renderExtraNames);
+countInput.addEventListener("change", renderExtraNames);
+renderExtraNames();
+
+/* bijdrage toggle: reveal extra fields */
+const bijdrageToggle = document.getElementById("bijdrage-toggle");
+const bijdrageExtra = document.getElementById("bijdrage-extra");
+if (bijdrageToggle && bijdrageExtra) {
+  bijdrageToggle.addEventListener("change", () => {
+    if (bijdrageToggle.checked) {
+      bijdrageExtra.hidden = false;
+      bijdrageExtra.querySelectorAll(".field").forEach(f => {
+        f.style.animation = "none";
+        void f.offsetWidth;
+        f.style.animation = "";
+      });
+    } else {
+      bijdrageExtra.hidden = true;
+    }
+  });
+}
+
+/* RSVP — submit to webhook */
+const RSVP_WEBHOOK = "https://hook.eu1.make.com/1ek221xkm6eapw53jhgbtv8synw8himz";
+const rsvpSubmitBtn = document.getElementById("rsvpSubmit");
+
+rsvpForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const nameInput = rsvpForm.querySelector('input[name="name"]');
+  const name = nameInput.value.trim();
+  if (!name) {
+    nameInput.focus();
+    return;
+  }
+
+  // collect all named fields including dynamically added "name-2", "name-3", …
+  const fd = new FormData(rsvpForm);
+  const payload = {};
+  const extraNamesList = [];
+  for (const [k, v] of fd.entries()) {
+    if (/^name-\d+$/.test(k)) extraNamesList.push(v);
+    else payload[k] = v;
+  }
+  if (extraNamesList.length) payload.extra_names = extraNamesList;
+  payload.timestamp = new Date().toISOString();
+  payload.source = "wedding-site";
+
+  rsvpSubmitBtn.disabled = true;
+  rsvpSubmitBtn.innerHTML = 'Versturen…';
+
+  try {
+    await fetch(RSVP_WEBHOOK, {
+      method: "POST",
+      mode: "no-cors", // Make webhook accepts opaque POSTs; we won't read the response
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    rsvpForm.classList.add("is-sent");
+    rsvpForm.scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch (err) {
+    rsvpSubmitBtn.disabled = false;
+    rsvpSubmitBtn.innerHTML = 'Probeer opnieuw <span class="arrow">→</span>';
+    console.error("RSVP submit failed", err);
+  }
+});
+
+/* ============================================================
+   ADD TO CALENDAR — generate .ics on click
+   ============================================================ */
+document.getElementById("calBtn").addEventListener("click", e => {
+  e.preventDefault();
+  const ics = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Paulien & Harm-Jan//Wedding 2026//EN",
+    "BEGIN:VEVENT",
+    "UID:phwedding-2026@slotdoddendael",
+    "DTSTAMP:20260101T000000Z",
+    "DTSTART;VALUE=DATE:20260826",
+    "DTEND;VALUE=DATE:20260827",
+    "SUMMARY:Bruiloft Paulien & Harm-Jan",
+    "LOCATION:Slot Doddendael, Binnenweg 2, 6644 KD Ewijk",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+  const blob = new Blob([ics], { type: "text/calendar" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Paulien-en-Harm-Jan-26-aug-2026.ics";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+});
+</script>
+
+</body>
+<script src="image-slot.js"></script>
+</html>
