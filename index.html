@@ -1472,6 +1472,10 @@ button { font: inherit; cursor: pointer; }
    PROGRAMMA — per-kaart filter (26a / 26b / 26c)
    ============================================================ */
 .timeline-row[data-show] { display: none; }
+/* dresscode tekstvariant per kaart */
+.dc-dag { display: none; }
+body[data-kaart="26a"] .dc-avond { display: none; }
+body[data-kaart="26a"] .dc-dag { display: inline; }
 body[data-kaart="26a"] .timeline-row[data-show~="26a"],
 body[data-kaart="26b"] .timeline-row[data-show~="26b"],
 body[data-kaart="26c"] .timeline-row[data-show~="26c"] {
@@ -2100,7 +2104,7 @@ body.is-intro-locked { overflow: hidden; }
     <div class="info-aside fx fx-d1">
       <span class="eyebrow">Dresscode</span>
       <h3>Italian Chique</h3>
-      <p style="color: rgb(107, 98, 88)">Laat je inspireren door het gevoel van een Italiaanse zomeravond: warm, stijlvol en feestelijk. Een avond om uit te pakken, in kleuren die passen bij La Dolce Vita.</p>
+      <p style="color: rgb(107, 98, 88)">Laat je inspireren door het gevoel van een Italiaanse zomeravond: warm, stijlvol en feestelijk. Een <span class="dc-avond">avond</span><span class="dc-dag">dag</span> om uit te pakken, in kleuren die passen bij La Dolce Vita.</p>
 
       <div class="dresscode-block">
         <div class="dresscode-label">Voor hem:</div>
@@ -2525,8 +2529,9 @@ const extraNames = document.getElementById("extra-names");
 const firstNameLabel = document.querySelector('label[for="rsvp-name"]');
 
 function renderExtraNames() {
-  const total = Math.max(1, Math.min(6, parseInt(countInput.value, 10) || 1));
-  countInput.value = total;
+  const raw = parseInt(countInput.value, 10);
+  // tijdens het typen: leeg of ongeldig veld niet forceren
+  const total = (!countInput.value || isNaN(raw)) ? 1 : Math.max(1, Math.min(6, raw));
   firstNameLabel.textContent = total > 1 ? "Naam persoon 1" : "Naam";
 
   const current = extraNames.querySelectorAll(".field:not(.is-leaving)");
@@ -2554,7 +2559,14 @@ function renderExtraNames() {
 }
 
 countInput.addEventListener("input", renderExtraNames);
-countInput.addEventListener("change", renderExtraNames);
+// pas bij verlaten/wijzigen het veld netjes binnen 1–6 klemmen
+function clampCount() {
+  const raw = parseInt(countInput.value, 10);
+  countInput.value = isNaN(raw) ? 1 : Math.max(1, Math.min(6, raw));
+  renderExtraNames();
+}
+countInput.addEventListener("change", clampCount);
+countInput.addEventListener("blur", clampCount);
 renderExtraNames();
 
 /* bijdrage toggle: reveal extra fields */
